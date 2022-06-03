@@ -1,0 +1,9 @@
+.bg-shape-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 740px;
+  z-index: -1;
+}
+/*# sourceMappingURL=backgroundShape.css.map */

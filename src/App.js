@@ -1,9 +1,10 @@
 import * as React from "react";
 
 import "./assets/styles/global.css";
+import Main from "./layout/main";
 
 const App = () => {
-  return <main></main>;
+  return <Main />;
 };
 
 export default App;

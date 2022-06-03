@@ -1,0 +1,20 @@
+main {
+  position: relative;
+  height: 100%;
+  section {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .main-inner-wrapper {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    // max-width: 800px;
+    justify-content: space-around;
+    // background-color: beige;
+    margin: 0 auto;
+  }
+}

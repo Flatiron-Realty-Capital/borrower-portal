@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,iBAAiB,CAAC;EAChB,QAAQ,EAAE,QAAQ;EAClB,GAAG,EAAE,CAAC;EACN,IAAI,EAAE,CAAC;EACP,KAAK,EAAE,IAAI;EACX,SAAS,EAAE,KAAK;EAChB,OAAO,EAAE,EAAE;CACZ",
+    "sources": [
+        "bacgkroundShape.scss"
+    ],
+    "names": [],
+    "file": "bacgkroundShape.css"
+}
