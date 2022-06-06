@@ -65,16 +65,33 @@
   line-height: 12px;
 }
 
-.form-outer-wrapper .form__buttons .reset-buttons-container #forgot-password {
-  background-color: transparent;
-  color: #235685;
-  text-decoration: underline;
-}
-
 .form-outer-wrapper .form__buttons #submit {
   background-color: #235685;
   width: 100%;
   padding: 18px;
   color: #ffffff;
+}
+
+.form-outer-wrapper .form__buttons .existing-user-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: 15px;
+}
+
+.form-outer-wrapper .form__buttons .existing-user-container button {
+  margin-left: 5px;
+}
+
+.form-outer-wrapper .underline-ghost-button {
+  background-color: transparent;
+  color: #235685;
+  text-decoration: underline;
 }
 /*# sourceMappingURL=form.css.map */

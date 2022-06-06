@@ -54,11 +54,6 @@
         font-size: 12.8px;
         line-height: 12px;
       }
-      #forgot-password {
-        background-color: transparent;
-        color: #235685;
-        text-decoration: underline;
-      }
     }
     #submit {
       background-color: #235685;
@@ -68,5 +63,20 @@
       padding: 18px;
       color: #ffffff;
     }
+
+    .existing-user-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 15px;
+      button {
+        margin-left: 5px;
+      }
+    }
+  }
+  .underline-ghost-button {
+    background-color: transparent;
+    color: #235685;
+    text-decoration: underline;
   }
 }

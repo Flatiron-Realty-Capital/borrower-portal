@@ -1,9 +1,10 @@
 import React from "react";
 import Input from "../../../components/input";
-import Visibility from "@mui/icons-material/Visibility";
-import VisibilityOff from "@mui/icons-material/VisibilityOff";
+
+import EmailOutlined from "@mui/icons-material/EmailOutlined";
 import { useSelector } from "react-redux";
-const Password = (props) => {
+
+const Email = (props) => {
   const [values, setValues] = React.useState({
     amount: "",
     password: "",
@@ -26,15 +27,15 @@ const Password = (props) => {
 
   return (
     <Input
-      keyName={"password"}
-      value={formState.password}
-      type={values.showPassword ? "text" : "password"}
+      keyName={"fullName"}
+      value={formState.fullName}
+      handleChange={handleChange("password")}
       iconOnClick={handleClickShowPassword}
-      icon={values.showPassword ? <VisibilityOff /> : <Visibility />}
-      label={"Password"}
-      ariaLabel={"toggle password visibility"}
+      icon={<EmailOutlined />}
+      label={"Email Address"}
+      ariaLabel={"email address"}
     />
   );
 };
 
-export default Password;
+export default Email;

@@ -2,6 +2,7 @@ import React from "react";
 import Input from "../../../components/input";
 
 import EmailOutlined from "@mui/icons-material/EmailOutlined";
+import { useSelector } from "react-redux";
 
 const Email = (props) => {
   const [values, setValues] = React.useState({
@@ -12,6 +13,7 @@ const Email = (props) => {
     showPassword: false,
   });
 
+  const formState = useSelector((state) => state.formState);
   const handleChange = (prop) => (event) => {
     setValues({ ...values, [prop]: event.target.value });
   };
@@ -25,8 +27,8 @@ const Email = (props) => {
 
   return (
     <Input
-      value={values.password}
-      type={values.showPassword ? "text" : "password"}
+      keyName={"emailAddress"}
+      value={formState.emailAddress}
       handleChange={handleChange("password")}
       iconOnClick={handleClickShowPassword}
       icon={<EmailOutlined />}

@@ -1,6 +1,6 @@
 import React from "react";
 import BackgroundShape from "./backgroundShape";
-import Form from "./form/form";
+import SignInForm from "./form/form";
 import Stats from "./stats";
 import "./styles/main.css";
 
@@ -10,7 +10,7 @@ const Main = (props) => {
       <BackgroundShape />
       <div className="main-inner-wrapper">
         <section id="form">
-          <Form />
+          <SignInForm />
         </section>
         <section id="stats">
           <Stats />

@@ -8,15 +8,22 @@ import {
   OutlinedInput,
 } from "@mui/material";
 import "./styles/input.css";
+import { updateFormState } from "../redux/actions/formStateActions";
+import { useDispatch, useSelector } from "react-redux";
+
 const Input = ({
+  fieldName,
   type,
   value,
   handleChange,
+  keyName,
   ariaLabel,
   iconOnClick,
   icon,
   label,
 }) => {
+  const formState = useSelector((state) => state.formState);
+  const dispatch = useDispatch();
   const [values, setValues] = React.useState({
     amount: "",
     password: "",
@@ -24,6 +31,11 @@ const Input = ({
     weightRange: "",
     showPassword: false,
   });
+
+  const handleDefaultInputChange = (e) => {
+    console.log("Change", keyName, e.target.value);
+    dispatch(updateFormState({ key: keyName, value: e.target.value }));
+  };
 
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
@@ -37,7 +49,7 @@ const Input = ({
           id="outlined-adornment-password"
           type={type}
           value={value}
-          onChange={handleChange}
+          onChange={handleDefaultInputChange}
           endAdornment={
             <InputAdornment position="end">
               <IconButton

@@ -1,6 +1,7 @@
 main {
   position: relative;
   height: 100%;
+  padding: 15px;
 }
 
 main section {
