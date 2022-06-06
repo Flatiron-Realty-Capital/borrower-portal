@@ -12,13 +12,14 @@ import { updateFormState } from "../redux/actions/formStateActions";
 import { useDispatch, useSelector } from "react-redux";
 
 const Input = ({
-  fieldName,
   type,
   value,
-  handleChange,
+  onBlur,
+  onChange,
   keyName,
   ariaLabel,
   iconOnClick,
+  showError,
   icon,
   label,
 }) => {
@@ -40,6 +41,21 @@ const Input = ({
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
   };
+
+  const inputIcon = iconOnClick ? (
+    <InputAdornment position="end">
+      <IconButton
+        aria-label={ariaLabel}
+        onClick={iconOnClick}
+        onMouseDown={handleMouseDownPassword}
+        edge="end"
+      >
+        {icon}
+      </IconButton>
+    </InputAdornment>
+  ) : (
+    <InputAdornment position="end">{icon}</InputAdornment>
+  );
   return (
     <div className="input-outer-wrapper">
       <FormControl fullWidth variant="outlined">
@@ -49,20 +65,11 @@ const Input = ({
           id="outlined-adornment-password"
           type={type}
           value={value}
-          onChange={handleDefaultInputChange}
-          endAdornment={
-            <InputAdornment position="end">
-              <IconButton
-                aria-label={ariaLabel}
-                onClick={iconOnClick}
-                onMouseDown={handleMouseDownPassword}
-                edge="end"
-              >
-                {icon}
-              </IconButton>
-            </InputAdornment>
-          }
+          onChange={onChange ? onChange : handleDefaultInputChange}
+          error={showError}
+          endAdornment={icon && inputIcon}
           label={label}
+          onBlur={onBlur}
         />
       </FormControl>
     </div>

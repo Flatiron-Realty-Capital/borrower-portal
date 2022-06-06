@@ -2,4 +2,8 @@
   position: relative;
   margin-top: 20px;
 }
+
+.input-outer-wrapper button {
+  margin-right: -10px !important;
+}
 /*# sourceMappingURL=input.css.map */

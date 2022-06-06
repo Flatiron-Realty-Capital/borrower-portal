@@ -33,7 +33,7 @@ div,
 span,
 textarea {
   font-size: 0.8rem;
-  font-family: var(--inter);
+  font-family: var(--inter) !important;
 }
 
 input,

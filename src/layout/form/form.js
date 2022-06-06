@@ -14,6 +14,7 @@ import ExistingUserFormFields from "./existingUser";
 import NewAccountFormFields from "./newAccount";
 
 const Form = (props) => {
+  const [rememberMeIsValid, setRememberMeIsValid] = React.useState(false);
   const formState = useSelector((state) => state.formState);
   const isExistingUser = useSelector((state) => state.isExistingUser);
   const dispatch = useDispatch();
@@ -48,19 +49,27 @@ const Form = (props) => {
         {isExistingUser ? <ExistingUserFormFields /> : <NewAccountFormFields />}
 
         <div className="form__buttons">
-          <div className="reset-buttons-container">
-            <div className="remember-user">
-              <FormControlLabel
-                control={<Checkbox size="small" />}
-                label="Remeber Me"
-              />
+          {isExistingUser && (
+            <div className="reset-buttons-container">
+              <div className="remember-user">
+                <FormControlLabel
+                  control={
+                    <Checkbox
+                      value={rememberMeIsValid}
+                      onChange={() => setRememberMeIsValid((s) => !s)}
+                      size="small"
+                    />
+                  }
+                  label="Remeber Me"
+                />
+              </div>
+              <button className="underline-ghost-button" id="forgot-password">
+                Forgot Password
+              </button>
             </div>
-            <button className="underline-ghost-button" id="forgot-password">
-              Forgot Password
-            </button>
-          </div>
+          )}
           <button onClick={handleSubmit} id="submit" type="submit">
-            Sign In
+            {isExistingUser ? "Sign In" : "Create new account"}
           </button>
 
           <div className="existing-user-container">

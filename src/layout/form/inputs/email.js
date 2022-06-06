@@ -1,38 +1,42 @@
-import React from "react";
+import React, { useState } from "react";
 import Input from "../../../components/input";
 
 import EmailOutlined from "@mui/icons-material/EmailOutlined";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { validateEmail } from "../../../helpers/validateEmail";
+import { updateFormState } from "../../../redux/actions/formStateActions";
 
 const Email = (props) => {
-  const [values, setValues] = React.useState({
-    amount: "",
-    password: "",
-    weight: "",
-    weightRange: "",
-    showPassword: false,
-  });
-
+  const [isValid, setValid] = useState(false);
   const formState = useSelector((state) => state.formState);
-  const handleChange = (prop) => (event) => {
-    setValues({ ...values, [prop]: event.target.value });
+  const dispatch = useDispatch();
+
+  //Functions
+  const handleChange = (e) => {
+    // console.log("VALIDATING EMAIL");
+    let val = e.target.value;
+    validateEmailHandler(val);
+    dispatch(updateFormState({ key: "emailAddress", value: val }));
   };
 
-  const handleClickShowPassword = () => {
-    setValues({
-      ...values,
-      showPassword: !values.showPassword,
-    });
+  const validateEmailHandler = (email) => {
+    if (validateEmail(email)) {
+      console.log("VALID EMAIL");
+      setValid(false);
+    } else {
+      setValid(true);
+      console.log("NOT VALID");
+    }
   };
 
   return (
     <Input
       keyName={"emailAddress"}
       value={formState.emailAddress}
-      handleChange={handleChange("password")}
-      iconOnClick={handleClickShowPassword}
+      onChange={handleChange}
       icon={<EmailOutlined />}
       label={"Email Address"}
+      showError={isValid}
       ariaLabel={"email address"}
     />
   );
