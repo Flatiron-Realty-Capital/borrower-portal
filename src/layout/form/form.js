@@ -1,26 +1,37 @@
 import React from "react";
-import "../styles/form.css";
-import Logo from "../../assets/images/logo.png";
-import Input from "../../components/input";
-import Password from "./inputs/password";
-import Email from "./inputs/email";
-import { Checkbox, FormControlLabel } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import {
   setIsExistingUserFalse,
   setIsExistingUserTrue,
 } from "../../redux/actions/isExistingUserActions";
+
+import { Checkbox, FormControlLabel } from "@mui/material";
 import ExistingUserFormFields from "./existingUser";
+import Logo from "../../assets/images/logo.png";
 import NewAccountFormFields from "./newAccount";
 
-const Form = (props) => {
+import "../styles/form.css";
+import { useHttpClient } from "../../hooks/http-hook";
+
+const Form = () => {
+  //State & Redux
   const [rememberMeIsValid, setRememberMeIsValid] = React.useState(false);
   const formState = useSelector((state) => state.formState);
   const isExistingUser = useSelector((state) => state.isExistingUser);
   const dispatch = useDispatch();
 
-  const handleSubmit = () => {
+  //Functions
+  const { isLoading, error, sendRequest, clearError } = useHttpClient();
+
+  const handleSubmit = async () => {
     console.log("Send Data to endpoint ->", formState);
+
+    let endpointURL = isExistingUser ? "loginEndPointURL" : "createNewUserURL"; //If seperate enpoints are even required. If not, just the single endpoint
+    try {
+      await sendRequest(endpointURL, "POST", formState);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const toggleToExistingUser = () => {
