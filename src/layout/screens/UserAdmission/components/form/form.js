@@ -1,48 +1,55 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { SpinnerDotted } from "spinners-react";
+import { Checkbox, FormControlLabel } from "@mui/material";
+
+import Logo from "../../../../../assets/images/logo.png";
+import ExistingUserFormFields from "./components/existingUser";
+import NewAccountFormFields from "./components/newAccount";
+
+import "./form.css";
+import { useHttpClient } from "../../../../../hooks/http-hook";
 import {
   setIsExistingUserFalse,
   setIsExistingUserTrue,
-} from "../../redux/actions/isExistingUserActions";
-
-import { Checkbox, FormControlLabel } from "@mui/material";
-import ExistingUserFormFields from "./existingUser";
-import Logo from "../../assets/images/logo.png";
-import NewAccountFormFields from "./newAccount";
-
-import "../styles/form.css";
-import { useHttpClient } from "../../hooks/http-hook";
+} from "../../../../../redux/actions/isExistingUserActions";
+import { logInUser } from "../../../../../redux/actions/isLoggedInActions";
 
 const Form = () => {
   //State & Redux
+  const [isLoading, setIsLoading] = React.useState(false);
   const [rememberMeIsValid, setRememberMeIsValid] = React.useState(false);
   const formState = useSelector((state) => state.formState);
   const isExistingUser = useSelector((state) => state.isExistingUser);
   const dispatch = useDispatch();
 
   //Functions
-  const { isLoading, error, sendRequest, clearError } = useHttpClient();
+  // const { isLoading, error, sendRequest, clearError } = useHttpClient();
 
   const handleSubmit = async () => {
     console.log("Send Data to endpoint ->", formState);
 
     let endpointURL = isExistingUser
-      ? "http://127.0.0.1:8000/login"
-      : "http://127.0.0.1:8000/createAccount"; //If seperate enpoints are even required. If not, just the single endpoint
+      ? "https://frcbackend.azurewebsites.net/login"
+      : "https://frcbackend.azurewebsites.net/createAccount"; //If seperate enpoints are even required. If not, just the single endpoint
 
     const requestOptions = {
       method: "POST",
-
       headers: { "Content-Type": "application/json" },
-
       body: JSON.stringify(formState),
     };
 
     try {
-      fetch(endpointURL, requestOptions)
-        .then((response) => response.json())
+      setIsLoading(true);
+      const response = await fetch(endpointURL, requestOptions);
+      const responseData = await response.json();
+      <SpinnerDotted size={150} thickness={100} speed={100} color="#235685" />;
 
-        .then((data) => console.log(data));
+      if (!response.ok) {
+        throw new Error(responseData.message);
+      }
+      dispatch(logInUser());
+      setIsLoading(false);
     } catch (error) {
       console.log(error);
     }
@@ -58,11 +65,23 @@ const Form = () => {
 
   return (
     <div className="form-outer-wrapper">
+      {isLoading && (
+        <div className="loader-overlay">
+          <SpinnerDotted
+            size={150}
+            thickness={100}
+            speed={100}
+            color="#235685"
+          />
+        </div>
+      )}
       <div className="form__header">
         <div className="logo-wrapper">
           <img src={Logo} alt="" />
         </div>
-        <h1>{isExistingUser ? "Borrower Sign In" : "Create Account"}</h1>
+        <h1>
+          {isExistingUser ? "Borrower Sign In" : "Create Borrower Account"}
+        </h1>
         <p>
           {isExistingUser
             ? "Sign in to gather all the data you need about your loan."

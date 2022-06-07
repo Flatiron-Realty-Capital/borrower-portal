@@ -1,12 +1,13 @@
 import React from "react";
-import Input from "../../../components/input";
+import { useDispatch, useSelector } from "react-redux";
+import Input from "../../../../../../../components/input";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
-import { useDispatch, useSelector } from "react-redux";
 import { VisibilityOffOutlined, VisibilityOutlined } from "@mui/icons-material";
-import { validatePassword } from "../../../helpers/validatePassword";
-import { updateFormState } from "../../../redux/actions/formStateActions";
-import Columns from "../../../components/shared/Columns/Columns";
+
+import Columns from "../../../../../../../components/shared/Columns/Columns";
+import { updateFormState } from "../../../../../../../redux/actions/formStateActions";
+import { validatePassword } from "../../../../../../../helpers/validatePassword";
 const Password = (props) => {
   //State & Redux
   const [showError, setShowError] = React.useState(false);

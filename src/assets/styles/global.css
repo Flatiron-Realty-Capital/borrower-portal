@@ -54,17 +54,17 @@ p {
 }
 
 h1 {
-  font-family: var(--manrope);
+  font-family: var(--jost);
   font-weight: 800;
 }
 
 h2 {
-  font-family: var(--manrope);
+  font-family: var(--jost);
   font-size: 22px;
 }
 
 h3 {
-  font-family: var(--manrope);
+  font-family: var(--inter);
   font-size: 18px;
   font-weight: 400;
 }
@@ -86,6 +86,11 @@ button {
   -webkit-transition: 150ms;
   transition: 150ms;
   border-radius: 4px;
+  background-color: transparent;
+}
+
+button:hover {
+  background-color: #f4f6f9;
 }
 
 button .icon-wrapper svg {

@@ -1,0 +1,96 @@
+.portal-body {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.portal-body .portal-body__header {
+  padding: 45px 0;
+  text-align: center;
+}
+
+.portal-body .portal-body__header h1 {
+  font-size: 32px;
+  line-height: 48px;
+  color: #3a3a3a;
+}
+
+.portal-body .portal-body__header p {
+  line-height: 26px;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.portal-body .portal-body__content-area {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 80px;
+  width: 100%;
+}
+
+.portal-body .portal-body__content-area .card-item {
+  -webkit-box-shadow: 0px 2px 4px 2px #0000001a;
+          box-shadow: 0px 2px 4px 2px #0000001a;
+  margin: 20px;
+  padding: 20px 30px;
+  width: 100%;
+  max-width: 420px;
+  border-radius: 8px;
+}
+
+.portal-body .portal-body__content-area .card-item h3 {
+  color: #235685;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 28px;
+  margin-bottom: 5px;
+}
+
+.portal-body .portal-body__content-area .card-item .card-button-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  margin-top: 30px;
+}
+
+.portal-body .portal-body__content-area .card-item .card-button-wrapper button.card-button {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #235685;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 50px;
+  background-color: transparent;
+}
+
+.portal-body .portal-body__content-area .card-item .card-button-wrapper button.card-button svg {
+  fill: #235685;
+  height: 18px;
+}
+/*# sourceMappingURL=PortalBody.css.map */

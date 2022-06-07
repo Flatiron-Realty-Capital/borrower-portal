@@ -22,6 +22,8 @@ const Input = ({
   showError,
   icon,
   label,
+  onKeyDown,
+  onFocus,
 }) => {
   const formState = useSelector((state) => state.formState);
   const dispatch = useDispatch();
@@ -70,6 +72,8 @@ const Input = ({
           endAdornment={icon && inputIcon}
           label={label}
           onBlur={onBlur}
+          onFocus={onFocus}
+          onKeyDown={onKeyDown}
         />
       </FormControl>
     </div>

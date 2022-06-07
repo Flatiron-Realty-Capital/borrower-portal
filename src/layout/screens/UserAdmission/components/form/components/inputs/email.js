@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import Input from "../../../components/input";
 
 import EmailOutlined from "@mui/icons-material/EmailOutlined";
 import { useDispatch, useSelector } from "react-redux";
-import { validateEmail } from "../../../helpers/validateEmail";
-import { updateFormState } from "../../../redux/actions/formStateActions";
+import { validateEmail } from "../../../../../../../helpers/validateEmail";
+import { updateFormState } from "../../../../../../../redux/actions/formStateActions";
+import Input from "../../../../../../../components/input";
 
 const Email = (props) => {
   const [isValid, setValid] = useState(false);
