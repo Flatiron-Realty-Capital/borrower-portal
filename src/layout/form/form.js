@@ -26,9 +26,23 @@ const Form = () => {
   const handleSubmit = async () => {
     console.log("Send Data to endpoint ->", formState);
 
-    let endpointURL = isExistingUser ? "loginEndPointURL" : "createNewUserURL"; //If seperate enpoints are even required. If not, just the single endpoint
+    let endpointURL = isExistingUser
+      ? "http://127.0.0.1:8000/login"
+      : "http://127.0.0.1:8000/createAccount"; //If seperate enpoints are even required. If not, just the single endpoint
+
+    const requestOptions = {
+      method: "POST",
+
+      headers: { "Content-Type": "application/json" },
+
+      body: JSON.stringify(formState),
+    };
+
     try {
-      await sendRequest(endpointURL, "POST", formState);
+      fetch(endpointURL, requestOptions)
+        .then((response) => response.json())
+
+        .then((data) => console.log(data));
     } catch (error) {
       console.log(error);
     }
