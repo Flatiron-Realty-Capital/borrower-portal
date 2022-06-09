@@ -7,7 +7,7 @@ const PortalMain = (props) => {
   return (
     <section id="portal-main">
       <PortalMainHeader />
-      <PortalMainBody />
+      <PortalMainBody toggleForm={props.toggleForm} />
     </section>
   );
 };

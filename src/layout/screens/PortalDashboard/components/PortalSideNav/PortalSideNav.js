@@ -7,6 +7,7 @@ const PortalSideNav = (props) => {
     <nav id="portal-side-nav">
       <div className="logo-wrapper">
         <img src={Logo} alt="" srcset="" />
+        <p className="logo-title">Borrow Portal</p>
       </div>
 
       <nav>

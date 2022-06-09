@@ -15,7 +15,13 @@ const PortalMainBody = (props) => {
             <h3>Submit New Credit Authorization</h3>
             <p>Submit a deal for a new property</p>
             <div className="card-button-wrapper">
-              <button className="card-button">{plus}</button>
+              <span>Add New</span>
+              <button
+                onClick={() => props.toggleForm("Credit Authorization Form")}
+                className="card-button"
+              >
+                {plus}
+              </button>
             </div>
           </div>
         </div>
@@ -25,7 +31,13 @@ const PortalMainBody = (props) => {
             <h3>New Deal Submission</h3>
             <p>Create a new credit authorization</p>
             <div className="card-button-wrapper">
-              <button className="card-button">{plus}</button>
+              <span>Add New</span>
+              <button
+                onClick={() => props.toggleForm("New Deal Submission")}
+                className="card-button"
+              >
+                {plus}
+              </button>
             </div>
           </div>
         </div>

@@ -56,27 +56,27 @@
 }
 
 .portal-body .portal-body__content-area .portal-row-item h2 {
-  font-size: 19px;
-  font-family: var(--mont);
-  color: var(--black);
+  font-size: 15px;
+  color: var(--blue);
+  font-weight: 500;
 }
 
 .portal-body .portal-body__content-area .card-item {
-  -webkit-box-shadow: 0px 2px 4px 2px #0000001a;
-          box-shadow: 0px 2px 4px 2px #0000001a;
-  margin: 20px 0;
+  -webkit-box-shadow: -2px 2px 2px 0px #00000014;
+          box-shadow: -2px 2px 2px 0px #00000014;
+  margin: 15px 0;
   padding: 18px 20px;
   width: 100%;
   max-width: 380px;
   border-radius: 8px;
+  border: 1px solid #ededed;
 }
 
 .portal-body .portal-body__content-area .card-item h3 {
-  color: #235685;
+  color: var(--black);
   font-weight: 600;
   font-size: 16px;
   line-height: 28px;
-  margin-bottom: 5px;
 }
 
 .portal-body .portal-body__content-area .card-item .card-button-wrapper {
@@ -86,12 +86,21 @@
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: end;
-  margin-top: 30px;
+  margin-top: 45px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.portal-body .portal-body__content-area .card-item .card-button-wrapper span {
+  font-weight: bold;
+  font-size: 12px;
+  color: #235685;
 }
 
 .portal-body .portal-body__content-area .card-item .card-button-wrapper button.card-button {
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
   border: 2px solid #235685;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -104,9 +113,22 @@
           justify-content: center;
   border-radius: 50px;
   background-color: transparent;
+  margin-left: 6px;
+}
+
+.portal-body .portal-body__content-area .card-item .card-button-wrapper button.card-button:hover {
+  background: var(--blueHover);
+  -webkit-transition: 50ms;
+  transition: 50ms;
+}
+
+.portal-body .portal-body__content-area .card-item .card-button-wrapper button.card-button:hover svg {
+  fill: #ffffff;
 }
 
 .portal-body .portal-body__content-area .card-item .card-button-wrapper button.card-button svg {
+  -webkit-transition: 50ms;
+  transition: 50ms;
   fill: #235685;
   height: 18px;
 }

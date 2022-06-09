@@ -14,6 +14,15 @@
   width: 100%;
 }
 
+#portal-side-nav .logo-wrapper .logo-title {
+  color: #ffffff;
+  font-size: 12px;
+  font-style: italic;
+  opacity: 0.8;
+  text-align: right;
+  margin-top: -10px;
+}
+
 #portal-side-nav nav {
   position: relative;
 }
