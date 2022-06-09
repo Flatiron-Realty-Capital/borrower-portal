@@ -1,6 +1,7 @@
 section#form {
   width: 100%;
   max-width: 600px;
+  padding: 10px;
 }
 
 section#form .loader-overlay {

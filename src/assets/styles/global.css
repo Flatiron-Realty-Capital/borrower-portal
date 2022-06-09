@@ -21,9 +21,11 @@ body,
   --primary: #b92ede;
   --blue: #235685;
   --blueHover: #285a88;
+  --blueLightHover: #356899;
   --black: #3a3a3a;
   --gray: #aaa9a9;
   --darkGray: #777676;
+  --lightGray: #e1e1e1;
   --red: #cc0000;
 }
 
@@ -36,6 +38,7 @@ span,
 textarea {
   font-size: 0.8rem;
   font-family: var(--inter) !important;
+  color: var(--black);
 }
 
 input,

@@ -7,13 +7,12 @@ import Backdrop from "../Backdrop/Backdrop";
 import "./Modal.css";
 
 const ModalOverlay = (props) => {
-  const { className, style, onCancel, contentClass, footer, footerClass } =
+  const { id, className, style, onCancel, contentClass, footer, footerClass } =
     props;
 
   const content = (
-    <div className={`modal ${className}`} style={style}>
+    <div id={props.id} className={`modal ${className}`} style={style}>
       <div className="modal__header">
-        {" "}
         <button onClick={onCancel} className="cancel">
           {timesIcon}
         </button>

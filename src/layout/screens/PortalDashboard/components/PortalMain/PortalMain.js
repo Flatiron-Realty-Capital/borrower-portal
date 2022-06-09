@@ -1,7 +1,7 @@
 import React from "react";
 import "./PortalMain.css";
-import PortalMainHeader from "./PortalMainHeader/PortalMainHeader";
-import PortalMainBody from "./PortalMainBody/PortalMainBody";
+import PortalMainHeader from "./layout/PortalMainHeader/PortalMainHeader";
+import PortalMainBody from "./layout/PortalMainBody/PortalMainBody";
 
 const PortalMain = (props) => {
   return (

@@ -1,0 +1,164 @@
+header#portal-header {
+  position: relative;
+  background-color: #eff3f6;
+  margin: 0 auto;
+  z-index: 11;
+  padding: 15px;
+}
+
+header#portal-header .header-inner-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-width: var(--maxPageWidth);
+  margin: 0 auto;
+}
+
+header#portal-header .header-inner-wrapper h1 {
+  font-size: 14px;
+  text-transform: uppercase;
+  color: var(--darkGray);
+  font-weight: 600;
+  visibility: hidden;
+}
+
+header#portal-header .header-inner-wrapper .logo-wrapper {
+  width: 180px;
+}
+
+header#portal-header .header-inner-wrapper .logo-wrapper img {
+  width: 100%;
+}
+
+header#portal-header .header-inner-wrapper nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header#portal-header .header-inner-wrapper nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+header#portal-header .header-inner-wrapper nav ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header#portal-header .header-inner-wrapper nav ul li.profile {
+  position: relative;
+  margin-left: 20px;
+  padding-left: 20px;
+  border-left: 1px solid #aaa9a9;
+}
+
+header#portal-header .header-inner-wrapper nav ul li .profile-dropdown {
+  position: absolute;
+  top: 100%;
+  width: 90%;
+  right: 0;
+  background-color: #ffffff;
+  -webkit-box-shadow: 0px 1px 1px 0px #0000000e;
+          box-shadow: 0px 1px 1px 0px #0000000e;
+  border: 1px solid #7776761f;
+  border-radius: 4px;
+}
+
+header#portal-header .header-inner-wrapper nav ul li .profile-dropdown ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+header#portal-header .header-inner-wrapper nav ul li .profile-dropdown button.dropdown-link-item {
+  width: 100%;
+  text-align: left;
+  padding: 12px 18px;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: var(--black);
+  border-radius: 0;
+}
+
+header#portal-header .header-inner-wrapper nav ul li .profile-dropdown button.dropdown-link-item#logout {
+  border-top: 1px solid #f4f6f9;
+}
+
+header#portal-header .header-inner-wrapper nav ul li .profile-dropdown button.dropdown-link-item .icon-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+header#portal-header .header-inner-wrapper nav ul li .profile-dropdown button.dropdown-link-item .icon-wrapper svg {
+  display: block;
+  height: 20px;
+  fill: var(--black);
+}
+
+header#portal-header .header-inner-wrapper button#profile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: transparent;
+}
+
+header#portal-header .header-inner-wrapper button#profile:hover {
+  background-color: #f4f6f9;
+}
+
+header#portal-header .header-inner-wrapper button#profile #profile__name {
+  color: var(--darkGray);
+  font-weight: bold;
+  margin: 0 5px;
+}
+
+header#portal-header .header-inner-wrapper .icon-wrapper {
+  position: relative;
+}
+
+header#portal-header .header-inner-wrapper .icon-wrapper svg {
+  height: 32px;
+  fill: var(--darkGray);
+  display: block;
+}
+
+@media only screen and (max-width: 600px) {
+  #portal-header {
+    display: none !important;
+  }
+}
+/*# sourceMappingURL=PortalMainHeader.css.map */

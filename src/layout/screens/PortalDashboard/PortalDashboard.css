@@ -6,4 +6,12 @@
       grid-template-columns: 280px 1fr;
   height: 100%;
 }
+
+@media only screen and (max-width: 600px) {
+  #portal-dashboard {
+    height: initial;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
 /*# sourceMappingURL=PortalDashboard.css.map */

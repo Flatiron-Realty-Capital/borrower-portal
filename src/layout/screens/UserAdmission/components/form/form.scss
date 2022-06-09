@@ -1,6 +1,7 @@
 section#form {
   width: 100%;
   max-width: 600px;
+  padding: 10px;
   .loader-overlay {
     position: absolute;
     top: 0;
@@ -22,6 +23,7 @@ section#form {
     max-width: 560px;
     border-radius: 8px;
     padding: 40px 20px;
+    // margin: 10px 0;
 
     .form__header {
       position: relative;

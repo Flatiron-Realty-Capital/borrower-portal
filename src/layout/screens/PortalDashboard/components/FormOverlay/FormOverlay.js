@@ -1,15 +1,32 @@
 import React from "react";
 import Backdrop from "../../../../../components/shared/Backdrop/Backdrop";
+import CreditAuthForm from "../PortalMain/forms/CreditAuthForm";
+import DealSubmissionForm from "../PortalMain/forms/DealSubmissionForm";
 import "./FormOverlay.css";
 
 const FormOverlay = (props) => {
   return (
     <div id="form-overlay">
       <div className="form-container">
-        <button onClick={() => props.toggleForm("")} className="close">
-          {cross}
-        </button>
-        <h2 className="title">{props.title}</h2>
+        <div className="form-inner-wrapper">
+          <div className="inner-wrapper__header">
+            <h2 className="title">
+              {props.formType === "credit"
+                ? "Credit Authorization Form"
+                : "New Deal Submission"}
+            </h2>
+            <button onClick={() => props.toggleForm("")} className="close">
+              {cross}
+            </button>
+          </div>
+          <div className="inner-wrapper__body">
+            {props.formType === "credit" ? (
+              <CreditAuthForm />
+            ) : (
+              <DealSubmissionForm />
+            )}
+          </div>
+        </div>
       </div>
       <div onClick={() => props.toggleForm("")} className="backdrop"></div>
     </div>

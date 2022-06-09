@@ -1,0 +1,53 @@
+#portal-row-item {
+  display: flex;
+  flex-direction: column;
+  margin: 25px 0 40px;
+  display: flex;
+
+  .row-item__title {
+    display: flex;
+    align-items: center;
+    // justify-content: space-between;
+    h2 {
+      font-size: 15px;
+      // font-family: var(--mont);
+      // color: #4e4e4e;
+      color: var(--blue);
+      color: #153450;
+      font-weight: 600;
+      opacity: 0.8;
+    }
+    button.add-new {
+      width: 90px;
+      height: 28px;
+      background: var(--blue);
+      margin-left: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      span {
+        color: #ffffff;
+      }
+      .icon-wrapper {
+        svg {
+          display: block;
+          fill: #ffffff;
+        }
+      }
+    }
+  }
+
+  .row-item__body {
+    display: flex;
+    .existing-item-row {
+      display: flex;
+      flex-wrap: wrap;
+      // margin-left: 20px;
+      // padding-left: 20px;
+      // border-left: 1px solid var(--lightGray);
+      .new-card-item {
+        margin-right: 20px;
+      }
+    }
+  }
+}
