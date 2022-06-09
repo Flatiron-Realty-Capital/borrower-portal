@@ -1,20 +1,22 @@
 import React, { useState } from "react";
 
-import "./PortalHeader.css";
-import Logo from "../../../../../assets/images/logo.png";
-import Header from "../../../../header/header";
-import { useDispatch } from "react-redux";
-import { logOutUser } from "../../../../../redux/actions/isLoggedInActions";
+import "./PortalMainHeader.css";
+import Logo from "../../../../../../assets/images/logo.png";
 
-const PortalHeader = (props) => {
+import { useDispatch } from "react-redux";
+import { logOutUser } from "../../../../../../redux/actions/isLoggedInActions";
+import Header from "../../../../../header/header";
+
+const PortalMainHeader = (props) => {
   const [dropdownActive, setDropdownActive] = useState(false);
   const dispatch = useDispatch();
 
   return (
     <Header id={"portal-header"}>
-      <div className="logo-wrapper">
+      {/* <div className="logo-wrapper">
         <img src={Logo} alt="" srcset="" />
-      </div>
+      </div> */}
+      <h1>Flatiron Borrower Portal</h1>
       <nav>
         <ul>
           <li>
@@ -40,7 +42,7 @@ const PortalHeader = (props) => {
   );
 };
 
-export default PortalHeader;
+export default PortalMainHeader;
 
 const bell = (
   <svg viewBox="0 0 24 24">

@@ -1,7 +1,6 @@
 main {
   position: relative;
   height: 100%;
-  padding: 30px 15px;
 }
 
 main .main-inner-wrapper {
@@ -20,7 +19,7 @@ main .main-inner-wrapper {
 }
 
 @media only screen and (min-width: 600px) {
-  main section {
+  main.login section {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -34,10 +33,10 @@ main .main-inner-wrapper {
 }
 
 @media only screen and (max-width: 600px) {
-  main {
+  main.login {
     padding-bottom: 80px;
   }
-  main .main-inner-wrapper {
+  main.login .main-inner-wrapper {
     -ms-flex-wrap: wrap !important;
         flex-wrap: wrap !important;
   }

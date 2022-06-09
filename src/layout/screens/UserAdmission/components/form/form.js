@@ -43,7 +43,7 @@ const Form = () => {
       setIsLoading(true);
       const response = await fetch(endpointURL, requestOptions);
       const responseData = await response.json();
-      <SpinnerDotted size={150} thickness={100} speed={100} color="#235685" />;
+      // <SpinnerDotted size={150} thickness={100} speed={100} color="#235685" />;
 
       if (!response.ok) {
         throw new Error(responseData.message);
@@ -68,7 +68,7 @@ const Form = () => {
       {isLoading && (
         <div className="loader-overlay">
           <SpinnerDotted
-            size={150}
+            size={70}
             thickness={100}
             speed={100}
             color="#235685"

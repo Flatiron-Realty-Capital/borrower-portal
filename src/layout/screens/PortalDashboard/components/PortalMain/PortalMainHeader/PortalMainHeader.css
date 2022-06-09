@@ -9,9 +9,16 @@ header#portal-header {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  max-width: 1500px;
   margin: 0 auto;
   z-index: 11;
+}
+
+header#portal-header h1 {
+  font-size: 14px;
+  text-transform: uppercase;
+  color: var(--darkGray);
+  font-weight: 600;
+  visibility: hidden;
 }
 
 header#portal-header .logo-wrapper {
@@ -100,4 +107,4 @@ header#portal-header .icon-wrapper svg {
   fill: #aaa9a9;
   display: block;
 }
-/*# sourceMappingURL=PortalHeader.css.map */
+/*# sourceMappingURL=PortalMainHeader.css.map */

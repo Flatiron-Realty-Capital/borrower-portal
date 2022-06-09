@@ -1,14 +1,15 @@
 import React from "react";
-import PortalBody from "./components/PortalBody/PortalBody";
-import PortalHeader from "./components/PortalHeader/PortalHeader";
+import PortalMain from "./components/PortalMain/PortalMain";
+
+import PortalSideNav from "./components/PortalSideNav/PortalSideNav";
 
 import "./PortalDashboard.css";
 
 const PortalDashboard = (props) => {
   return (
-    <div className="portal-dashboard-outer-wrapper">
-      <PortalHeader />
-      <PortalBody />
+    <div id="portal-dashboard">
+      <PortalSideNav />
+      <PortalMain />
     </div>
   );
 };

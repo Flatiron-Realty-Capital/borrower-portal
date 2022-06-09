@@ -14,13 +14,15 @@ body,
   --pageMaxWidth: 940px;
   --headerHeight: 80px;
   --inter: "Inter", sans-serif;
-  --manrope: "Manrope", sans-serif;
+  --mont: "Montserrat", sans-serif;
   --jost: "Jost", sans-serif;
   --script: "Meow Script", cursive;
   --primary: #b92ede;
-  --blue: #1976d2;
-  --blueHover: #3084d7;
-  --gray: #616c70;
+  --blue: #235685;
+  --blueHover: #285a88;
+  --black: #3a3a3a;
+  --gray: #aaa9a9;
+  --darkGray: #777676;
   --red: #cc0000;
 }
 
@@ -53,12 +55,12 @@ p {
 }
 
 h1 {
-  font-family: var(--jost);
+  font-family: var(--mont);
   font-weight: 800;
 }
 
 h2 {
-  font-family: var(--jost);
+  font-family: var(--inter);
   font-size: 22px;
 }
 

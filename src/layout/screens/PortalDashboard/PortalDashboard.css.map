@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "",
+    "mappings": "AAAA,AAAA,iBAAiB,CAAC;EAChB,QAAQ,EAAE,QAAQ;EAClB,OAAO,EAAE,IAAI;EACb,qBAAqB,EAAE,SAAS;EAChC,MAAM,EAAE,IAAI;CACb",
     "sources": [
         "PortalDashboard.scss"
     ],

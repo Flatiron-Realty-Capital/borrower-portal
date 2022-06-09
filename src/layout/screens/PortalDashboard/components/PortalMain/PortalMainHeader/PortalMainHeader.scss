@@ -2,10 +2,18 @@ header#portal-header {
   position: relative;
   display: flex;
   align-items: center;
+  // justify-content: flex-end;
   justify-content: space-between;
-  max-width: 1500px;
+  // max-width: 1500px;
   margin: 0 auto;
   z-index: 11;
+  h1 {
+    font-size: 14px;
+    text-transform: uppercase;
+    color: var(--darkGray);
+    font-weight: 600;
+    visibility: hidden;
+  }
   .logo-wrapper {
     width: 180px;
     img {

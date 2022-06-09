@@ -1,1 +1,9 @@
-/* No CSS *//*# sourceMappingURL=PortalDashboard.css.map */
+#portal-dashboard {
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 280px 1fr;
+      grid-template-columns: 280px 1fr;
+  height: 100%;
+}
+/*# sourceMappingURL=PortalDashboard.css.map */

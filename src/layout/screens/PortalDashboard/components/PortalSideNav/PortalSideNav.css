@@ -1,0 +1,71 @@
+#portal-side-nav {
+  position: relative;
+  height: 100%;
+  background-image: linear-gradient(45deg, #285b8a 0%, #21517d 33%, #235380 50%, #25537e 67%, #2d577c 100%);
+}
+
+#portal-side-nav .logo-wrapper {
+  width: 180px;
+  margin: 0 auto;
+  padding: 30px 0;
+}
+
+#portal-side-nav .logo-wrapper img {
+  width: 100%;
+}
+
+#portal-side-nav nav {
+  position: relative;
+}
+
+#portal-side-nav nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#portal-side-nav nav ul li button.nav-link-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 50px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #ffffff;
+  padding: 10px 14px;
+}
+
+#portal-side-nav nav ul li button.nav-link-item.active {
+  background-color: #3c72a7;
+  letter-spacing: 1px;
+}
+
+#portal-side-nav nav ul li button.nav-link-item.active svg {
+  fill: #ffffff;
+}
+
+#portal-side-nav nav ul li button.nav-link-item .icon-wrapper {
+  margin-right: 11px;
+}
+
+#portal-side-nav nav ul li button.nav-link-item .icon-wrapper svg {
+  fill: #ffffff;
+}
+
+#portal-side-nav .city-image-wrapper {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  opacity: 0.25;
+}
+
+#portal-side-nav .city-image-wrapper img {
+  display: block;
+  width: 100%;
+}
+/*# sourceMappingURL=PortalSideNav.css.map */
