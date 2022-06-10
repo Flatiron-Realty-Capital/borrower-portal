@@ -1,8 +1,13 @@
-#file-upload {
-  position: relative;
+#file-upload .file-upload-inner-content {
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  text-align: center;
 }
 
-#file-upload .kiHXWb {
+#file-upload .file-upload-inner-content .file-upload-box {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -24,26 +29,91 @@
           flex-direction: column;
   -webkit-transition: 200ms;
   transition: 200ms;
-  color: #1b70ca;
-  max-width: 100%;
+  color: var(--blue);
+  width: 100%;
   height: 120px;
+  cursor: pointer;
+  min-width: 0;
 }
 
-#file-upload .kiHXWb svg path {
-  fill: var(--blue) !important;
-}
-
-#file-upload .kiHXWb:hover {
+#file-upload .file-upload-inner-content .file-upload-box:hover {
   background-color: #e3eef8;
 }
 
-#file-upload .kiHXWb .fVfcRr {
-  -webkit-box-flex: 0;
-      -ms-flex-positive: 0;
-          flex-grow: 0;
+#file-upload .file-upload-inner-content .file-upload-box svg {
+  fill: var(--blue);
+  height: 36px;
 }
 
-#file-upload .kiHXWb .file-types {
-  display: none;
+#file-upload .file-upload-inner-content .file-upload-box .file-upload__title {
+  margin-top: 5px;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+#file-upload .file-upload-inner-content .file-upload-preview {
+  position: relative;
+  border: 1px solid #d6d6d6;
+  width: 35%;
+  height: 100px;
+  max-width: 180px;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+#file-upload .file-upload-inner-content .file-upload-preview #pdf.icon-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+}
+
+#file-upload .file-upload-inner-content .file-upload-preview #pdf.icon-wrapper svg {
+  display: block;
+  height: 60%;
+  fill: #f70000;
+}
+
+#file-upload .file-upload-inner-content .file-upload-preview #close.icon-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 30px;
+  height: 30px;
+  background-color: #ffffff91;
+}
+
+#file-upload .file-upload-inner-content .file-upload-preview #close.icon-wrapper svg {
+  height: 24px;
+  fill: var(--black);
+}
+
+#file-upload .file-upload-inner-content .file-upload-preview img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+#file-upload .file-upload-inner-content .file-upload-preview p.file-path {
+  margin-top: 5px;
+  font-size: 12px;
+  line-height: 18px;
 }
 /*# sourceMappingURL=FileUpload.css.map */

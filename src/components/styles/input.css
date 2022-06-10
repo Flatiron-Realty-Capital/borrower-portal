@@ -1,9 +1,8 @@
-.input-outer-wrapper {
+.form-input {
   position: relative;
-  margin-top: 20px;
 }
 
-.input-outer-wrapper button {
+.form-input button {
   margin-right: -10px !important;
 }
 /*# sourceMappingURL=input.css.map */

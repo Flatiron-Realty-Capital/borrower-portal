@@ -11,7 +11,7 @@
       -ms-flex-pack: end;
           justify-content: flex-end;
   z-index: 11111;
-  padding: 1.5rem;
+  padding: 0.8rem;
 }
 
 #form-overlay .backdrop {
@@ -32,7 +32,7 @@
   width: 100%;
   max-width: 740px;
   border-radius: 4px;
-  padding: 2rem;
+  padding: 1.4rem;
   opacity: 0;
   z-index: 111111111;
   -webkit-animation: easeInFromRight 140ms ease normal forwards;
@@ -53,8 +53,8 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding-bottom: 15px;
-  margin-bottom: 25px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
   border-bottom: 1px solid rgba(128, 128, 128, 0.272);
 }
 
@@ -62,8 +62,8 @@
   z-index: 111111111;
   top: -10px;
   right: -10px;
-  width: 36px;
-  height: 36px;
+  width: 28px;
+  height: 28px;
   border-radius: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -78,11 +78,12 @@
 
 #form-overlay .form-container .form-inner-wrapper .inner-wrapper__header .close svg {
   display: block;
-  height: 36px;
+  height: 28px;
   fill: var(--black);
 }
 
 #form-overlay .form-container .form-inner-wrapper .inner-wrapper__header .title {
+  font-size: 20px;
   color: var(--blue);
 }
 

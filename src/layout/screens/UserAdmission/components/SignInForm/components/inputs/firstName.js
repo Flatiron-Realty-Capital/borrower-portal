@@ -9,6 +9,7 @@ const FirstName = (props) => {
 
   return (
     <Input
+      validators
       label={"First Name"}
       keyName={"firstName"}
       value={formState.firstName}

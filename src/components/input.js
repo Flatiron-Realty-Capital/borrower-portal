@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useReducer } from "react";
 import {
   FormControl,
   FormControlLabel,
@@ -10,6 +10,19 @@ import {
 import "./styles/input.css";
 import { updateFormState } from "../redux/actions/formStateActions";
 import { useDispatch, useSelector } from "react-redux";
+import FormField from "./form/shared/FormField/FormField";
+
+const inputReducer = (state, action) => {
+  switch (action.type) {
+    case "CHANGE":
+      return {
+        ...state,
+        value: action.val,
+      };
+    default:
+      return state;
+  }
+};
 
 const Input = ({
   type,
@@ -25,16 +38,14 @@ const Input = ({
   onKeyDown,
   onFocus,
 }) => {
-  const formState = useSelector((state) => state.formState);
-  const dispatch = useDispatch();
-  const [values, setValues] = React.useState({
-    amount: "",
-    password: "",
-    weight: "",
-    weightRange: "",
-    showPassword: false,
+  const [inputState, dispatch] = useReducer(inputReducer, {
+    value: "",
+    isValid: false,
   });
+  const formState = useSelector((state) => state.formState);
+  // const dispatch = useDispatch();
 
+  //Functions
   const handleDefaultInputChange = (e) => {
     console.log("Change", keyName, e.target.value);
     dispatch(updateFormState({ key: keyName, value: e.target.value }));
@@ -44,6 +55,7 @@ const Input = ({
     event.preventDefault();
   };
 
+  //Components
   const inputIcon = iconOnClick ? (
     <InputAdornment position="end">
       <IconButton
@@ -58,8 +70,9 @@ const Input = ({
   ) : (
     <InputAdornment position="end">{icon}</InputAdornment>
   );
+
   return (
-    <div className="input-outer-wrapper">
+    <FormField>
       <FormControl fullWidth variant="outlined">
         <InputLabel htmlFor="outlined-adornment-password">{label}</InputLabel>
         <OutlinedInput
@@ -76,7 +89,7 @@ const Input = ({
           onKeyDown={onKeyDown}
         />
       </FormControl>
-    </div>
+    </FormField>
   );
 };
 
