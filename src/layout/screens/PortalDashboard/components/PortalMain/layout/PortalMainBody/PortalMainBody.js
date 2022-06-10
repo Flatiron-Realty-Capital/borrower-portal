@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import ExistingItemCard from "../../components/ExistingItemCard/ExistingItemCard";
 import NewItemCard from "../../components/NewItemCard/NewItemCard";
 import PortalRowItem from "../../components/PortalRowItem/PortalRowItem";
@@ -20,6 +21,8 @@ const EXISTING_CREDIT_AUTH_DUMMY = [
 ];
 
 const PortalMainBody = (props) => {
+  const creditAuths = useSelector((state) => state.creditAuthorizations);
+  const dealSubmissions = useSelector((state) => state.dealSubmissions);
   return (
     <section className="portal-body">
       {/* <div className="portal-body__header">
@@ -27,15 +30,13 @@ const PortalMainBody = (props) => {
         <p>What would you like to first?</p>
       </div> */}
       <div className="portal-body__content-area">
-        <PortalRowItem title="Credit Authorizations">
-          {/* <NewItemCard
-            title="Create Credit Authorization"
-            description="Submit a deal for a new property"
-            onClick={() => props.toggleForm("credit")}
-          /> */}
-          {EXISTING_CREDIT_AUTH_DUMMY.length !== 0 && (
+        <PortalRowItem
+          addNewOnClick={() => props.toggleForm("credit")}
+          title="Credit Authorizations"
+        >
+          {creditAuths.length !== 0 && (
             <div className="existing-item-row">
-              {EXISTING_CREDIT_AUTH_DUMMY.map((a) => {
+              {creditAuths.map((a) => {
                 return (
                   <ExistingItemCard
                     data={a}
@@ -46,7 +47,10 @@ const PortalMainBody = (props) => {
             </div>
           )}
         </PortalRowItem>
-        <PortalRowItem title="Deal Submissions">
+        <PortalRowItem
+          addNewOnClick={() => props.toggleForm("credit")}
+          title="Deal Submissions"
+        >
           <NewItemCard
             title="Create New Deal"
             description="Submit a deal for a new property"

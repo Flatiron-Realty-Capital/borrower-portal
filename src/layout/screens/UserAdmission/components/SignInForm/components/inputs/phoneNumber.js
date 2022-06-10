@@ -5,7 +5,7 @@ import { Phone, PhoneOutlined } from "@mui/icons-material";
 import { updateFormState } from "../../../../../../../redux/actions/formStateActions";
 import { removeFormatting } from "../../../../../../../helpers/phoneNumber/removeFormatting";
 import { formatPhoneNum } from "../../../../../../../helpers/phoneNumber/formatPhoneNumber";
-import Input from "../../../../../../../components/input";
+import Input from "../../../../../../../components/form/components/shared/Input/Input";
 
 const PhoneNumber = (props) => {
   const [showError, setShowError] = useState(false);

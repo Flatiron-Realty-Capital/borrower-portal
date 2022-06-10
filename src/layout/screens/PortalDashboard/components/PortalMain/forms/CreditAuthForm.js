@@ -1,23 +1,25 @@
 import React from "react";
-import FileUpload from "../../../../../../components/form/inputs/FileUpload/FileUpload";
+import EmailField from "../../../../../../components/form/components/inputs/generic/EmailField";
+import FileUpload from "../../../../../../components/form/components/inputs/generic/FileUpload/FileUpload";
+import FirstNameField from "../../../../../../components/form/components/inputs/specifc/FirstNameField";
+import LastNameField from "../../../../../../components/form/components/inputs/specifc/LastNameField";
 import Columns from "../../../../../../components/shared/Columns/Columns";
-import Email from "../../../../UserAdmission/components/SignInForm/components/inputs/email";
-import FirstName from "../../../../UserAdmission/components/SignInForm/components/inputs/firstName";
-import LastName from "../../../../UserAdmission/components/SignInForm/components/inputs/lastName";
-import PhoneNumber from "../../../../UserAdmission/components/SignInForm/components/inputs/phoneNumber";
+
+// import PhoneNumber from "../../../../UserAdmission/components/SignInForm/components/inputs/phoneNumber";
 // import "./CreditAuthForm.css";
 
 const CreditAuthForm = (props) => {
   return (
-    <form className="CreditAuthForm-outer-wrapper">
+    <>
       <Columns>
-        <FirstName />
-        <LastName />
+        <FirstNameField />
+        <LastNameField />
       </Columns>
-      <Email />
-      <PhoneNumber />
+      <EmailField name="emailAddress" label="Email Address" isRequired />
+
+      {/* <PhoneNumber /> */}
       <FileUpload />
-    </form>
+    </>
   );
 };
 

@@ -1,0 +1,13 @@
+.form-field {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.form-field.no-margin {
+  margin-top: 0px;
+}
+
+.form-field .error {
+  color: var(--red);
+}
+/*# sourceMappingURL=FormField.css.map */

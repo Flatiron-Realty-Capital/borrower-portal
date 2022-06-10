@@ -1,19 +1,17 @@
 import React from "react";
 import BackgroundShape from "./components/backgroundShape/backgroundShape";
-import SignInForm from "./components/SignInForm/SignInForm";
-import Stats from "./components/stats/stats";
+// import SignInForm from "./components/SignInForm/SignInForm";
+import FormSection from "./sections/FormSection/FormSection";
+import StatsSection from "./sections/StatsSection/StatsSection";
+import "./UserAdmission.css";
 
 const UserAdmission = (props) => {
   return (
     <>
       <BackgroundShape />
       <div className="main-inner-wrapper">
-        <section id="form">
-          <SignInForm />
-        </section>
-        <section id="stats">
-          <Stats />
-        </section>
+        <FormSection />
+        <StatsSection />
       </div>
     </>
   );

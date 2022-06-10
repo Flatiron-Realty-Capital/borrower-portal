@@ -6,7 +6,7 @@ const PortalRowItem = (props) => {
     <div id="portal-row-item">
       <div className="row-item__title">
         <h2>{props.title}</h2>
-        <button className="add-new">
+        <button onClick={props.addNewOnClick} className="add-new">
           <span>Add New</span>
           <div className="icon-wrapper">{plus}</div>
         </button>

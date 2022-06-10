@@ -1,10 +1,10 @@
 import React from "react";
 import PortalMain from "./components/PortalMain/PortalMain";
-import FormOverlay from "./components/FormOverlay/FormOverlay";
+import AddFormOverlay from "./components/AddFormOverlay/AddFormOverlay";
 import PortalVerticalNav from "./components/PortalVerticalNav/PortalVerticalNav";
 
 import "./PortalDashboard.css";
-import Modal from "../../../components/shared/Modal/Modal";
+
 import MobileNav from "./components/MobileNav/MobileNav";
 
 const PortalDashboard = (props) => {
@@ -27,7 +27,7 @@ const PortalDashboard = (props) => {
         show={mobileNavIsActive}
       />
       {formIsActive && (
-        <FormOverlay toggleForm={toggleForm} formType={formType} />
+        <AddFormOverlay toggleForm={toggleForm} formType={formType} />
       )}
       <PortalVerticalNav handleMobileNavToggle={handleMobileNavToggle} />
       <PortalMain toggleForm={toggleForm} />

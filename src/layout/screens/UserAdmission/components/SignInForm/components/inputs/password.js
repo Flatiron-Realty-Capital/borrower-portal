@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import Input from "../../../../../../../components/input";
+import Input from "../../../../../../../components/form/components/shared/Input/Input";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import { VisibilityOffOutlined, VisibilityOutlined } from "@mui/icons-material";
