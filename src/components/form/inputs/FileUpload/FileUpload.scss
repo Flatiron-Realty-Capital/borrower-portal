@@ -1,0 +1,29 @@
+#file-upload {
+  position: relative;
+  .kiHXWb {
+    display: flex;
+    flex-grow: 1;
+    border-radius: 5px;
+    background-color: #eff7fe;
+    border: 2px dashed #a2cbf8;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: 200ms;
+    color: rgb(27, 112, 202);
+    max-width: 100%;
+    height: 120px;
+    svg path {
+      fill: var(--blue) !important;
+    }
+    &:hover {
+      background-color: #e3eef8;
+    }
+    .fVfcRr {
+      flex-grow: 0;
+    }
+    .file-types {
+      display: none;
+    }
+  }
+}

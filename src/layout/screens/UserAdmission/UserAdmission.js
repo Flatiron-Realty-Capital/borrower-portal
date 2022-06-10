@@ -1,6 +1,6 @@
 import React from "react";
 import BackgroundShape from "./components/backgroundShape/backgroundShape";
-import SignInForm from "./components/form/form";
+import SignInForm from "./components/SignInForm/SignInForm";
 import Stats from "./components/stats/stats";
 
 const UserAdmission = (props) => {

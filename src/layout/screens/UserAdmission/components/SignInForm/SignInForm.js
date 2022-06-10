@@ -7,7 +7,7 @@ import Logo from "../../../../../assets/images/logo.png";
 import ExistingUserFormFields from "./components/existingUser";
 import NewAccountFormFields from "./components/newAccount";
 
-import "./form.css";
+import "./SignInForm.css";
 import { useHttpClient } from "../../../../../hooks/http-hook";
 import {
   setIsExistingUserFalse,
@@ -41,13 +41,13 @@ const Form = () => {
 
     try {
       setIsLoading(true);
-      const response = await fetch(endpointURL, requestOptions);
-      const responseData = await response.json();
-      // <SpinnerDotted size={150} thickness={100} speed={100} color="#235685" />;
+      // const response = await fetch(endpointURL, requestOptions);
+      // const responseData = await response.json();
+      // // <SpinnerDotted size={150} thickness={100} speed={100} color="#235685" />;
 
-      if (!response.ok) {
-        throw new Error(responseData.message);
-      }
+      // if (!response.ok) {
+      //   throw new Error(responseData.message);
+      // }
       dispatch(logInUser());
       setIsLoading(false);
     } catch (error) {
