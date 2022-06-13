@@ -4,6 +4,7 @@ import formIsValidReducer from "./formIsValidReducer";
 import isLoggedInReducer from "./isLoggedInReducer";
 import dealSubmissionsReducer from "./dealSubmissionsReducer";
 import creditAuthorizationsReducer from "./creditAuthorizationsReducer";
+import accountInfoReducer from "./accountInfoReducer";
 
 import { combineReducers } from "redux";
 
@@ -14,6 +15,7 @@ const rootReducer = combineReducers({
   isLoggedIn: isLoggedInReducer,
   dealSubmissions: dealSubmissionsReducer,
   creditAuthorizations: creditAuthorizationsReducer,
+  accountInfo: accountInfoReducer,
 });
 
 export default rootReducer;

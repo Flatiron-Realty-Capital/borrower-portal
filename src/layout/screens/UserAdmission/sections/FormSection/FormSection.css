@@ -68,8 +68,8 @@ section#form .form-outer-wrapper .form__header p {
 }
 
 section#form .form-outer-wrapper .form__body {
-  padding: 30px 0;
-  max-width: 440px;
+  padding: 10px 0;
+  max-width: 420px;
   margin: 0 auto;
 }
 

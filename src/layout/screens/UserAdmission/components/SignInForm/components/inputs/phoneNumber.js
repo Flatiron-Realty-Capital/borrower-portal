@@ -36,7 +36,7 @@ const PhoneNumber = (props) => {
   };
   return (
     <Input
-      keyName={"phoneNumber"}
+      keyName={"borrowerPhoneNumber"}
       value={formatPhoneNum(formState.phoneNumber)}
       icon={<PhoneOutlined />}
       label={"Phone Number"}

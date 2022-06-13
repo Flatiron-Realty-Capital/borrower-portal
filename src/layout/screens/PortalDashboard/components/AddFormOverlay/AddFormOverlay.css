@@ -27,42 +27,19 @@
 }
 
 #form-overlay .form-container {
-  background-color: #ffffff;
-  z-index: 1111111;
+  position: relative;
   width: 100%;
-  max-width: 580px;
-  border-radius: 4px;
-  padding: 1.4rem;
-  opacity: 0;
+  max-width: 520px;
   z-index: 111111111;
   -webkit-animation: easeInFromRight 140ms ease normal forwards;
           animation: easeInFromRight 140ms ease normal forwards;
-  overflow-y: auto;
 }
 
-#form-overlay .form-container .form-inner-wrapper {
-  position: relative;
-}
-
-#form-overlay .form-container .form-inner-wrapper .inner-wrapper__header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  padding-bottom: 10px;
-  margin-bottom: 10px;
-  border-bottom: 1px solid rgba(128, 128, 128, 0.272);
-}
-
-#form-overlay .form-container .form-inner-wrapper .inner-wrapper__header .close {
+#form-overlay .form-container .close {
+  position: fixed;
   z-index: 111111111;
-  top: -10px;
-  right: -10px;
+  top: 10px;
+  right: 10px;
   width: 28px;
   height: 28px;
   border-radius: 50px;
@@ -77,15 +54,77 @@
           justify-content: center;
 }
 
-#form-overlay .form-container .form-inner-wrapper .inner-wrapper__header .close svg {
+#form-overlay .form-container .close svg {
   display: block;
   height: 28px;
   fill: var(--black);
 }
 
+#form-overlay .form-container .form-inner-wrapper {
+  position: relative;
+  background-color: #fff;
+  border-radius: 4px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+  max-height: 95%;
+  min-height: 84%;
+  overflow: hidden;
+  position: relative;
+}
+
+#form-overlay .form-container .form-inner-wrapper .inner-wrapper__header {
+  padding: 25px 15px 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+
 #form-overlay .form-container .form-inner-wrapper .inner-wrapper__header .title {
-  font-size: 20px;
+  font-size: 18px;
   color: var(--blue);
+}
+
+#form-overlay .form-container .form-inner-wrapper .inner-wrapper__header p {
+  opacity: 0.9;
+  margin-top: 5px;
+  line-height: 1.6rem;
+}
+
+#form-overlay .form-container .form-inner-wrapper .inner-wrapper__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  overflow-y: auto;
+  -webkit-box-shadow: inset -6px 2px 3px 0px #00000017;
+          box-shadow: inset -6px 2px 3px 0px #00000017;
+  padding: 15px 30px 40px;
 }
 
 @-webkit-keyframes easeInFromRight {

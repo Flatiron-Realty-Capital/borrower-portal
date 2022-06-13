@@ -14,6 +14,11 @@ import NewBorrowerForm from "./forms/NewBorrowerForm";
 import FormSubmitButton from "../../../../../components/form/components/shared/FormSubmitButton/FormSubmitButton";
 import Form from "../../../../../components/form/Form";
 import { setFormState } from "../../../../../redux/actions/formStateActions";
+import { setCreditAuthState } from "../../../../../redux/actions/creditAuthorizationsActions";
+import { setDealSubmissionsState } from "../../../../../redux/actions/dealSubmissionsActions";
+import { setAccountInfoState } from "../../../../../redux/actions/accountInfoActions";
+import { DUMMY_FULL_RESPONSE_DATA } from "../../../../../tests/responseData";
+
 const FormSection = (props) => {
   const [isLoading, setIsLoading] = React.useState(false);
   const [rememberMeIsValid, setRememberMeIsValid] = React.useState(false);
@@ -25,28 +30,41 @@ const FormSection = (props) => {
   const handleSubmit = async (state) => {
     console.log("Send Data to endpoint ->", state);
 
-    // let endpointURL = isExistingUser
-    //   ? "https://frcbackend.azurewebsites.net/login"
-    //   : "https://frcbackend.azurewebsites.net/createAccount"; //If seperate enpoints are even required. If not, just the single endpoint
+    let endpointURL = isExistingUser
+      ? "https://frcbackend.azurewebsites.net/login"
+      : "https://frcbackend.azurewebsites.net/createAccount"; //If seperate enpoints are even required. If not, just the single endpoint
 
-    // const requestOptions = {
-    //   method: "POST",
-    //   headers: { "Content-Type": "application/json" },
-    //   body: JSON.stringify(state),
-    // };
+    const requestOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(state),
+    };
 
     try {
-      // setIsLoading(true);
-      // const response = await fetch(endpointURL, requestOptions);
-      // const responseData = await response.json();
-      // <SpinnerDotted size={150} thickness={100} speed={100} color="#235685" />;
+      setIsLoading(true);
+      const response = await fetch(endpointURL, requestOptions);
+      console.log("response", response);
+      const responseData = await response.json();
+      console.log("responseData", responseData);
+      <SpinnerDotted size={150} thickness={100} speed={100} color="#235685" />;
 
-      // if (!response.ok) {
-      //   throw new Error(responseData.message);
-      // }
-      dispatch(logInUser());
-      dispatch(setFormState(state));
-      // setIsLoading(false);
+      if (!response.ok) {
+        throw new Error(responseData.message);
+      }
+      if (responseData.Authentication === "Authentication Failed") {
+        console.log(responseData.Authentication);
+      }
+      if (responseData.Authentication === "Worked") {
+        console.log("WORKED");
+        dispatch(logInUser());
+        // dispatch(setFormState(DUMMY_FULL_RESPONSE_DATA.userData));
+        dispatch(setCreditAuthState(DUMMY_FULL_RESPONSE_DATA.creditAuths));
+        dispatch(
+          setDealSubmissionsState(DUMMY_FULL_RESPONSE_DATA.dealSubmissions)
+        );
+        dispatch(setAccountInfoState(DUMMY_FULL_RESPONSE_DATA.userData));
+      }
+      setIsLoading(false);
     } catch (error) {
       console.log(error);
     }

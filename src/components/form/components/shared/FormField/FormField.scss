@@ -1,6 +1,6 @@
 .form-field {
   width: 100%;
-  margin-top: 20px;
+  margin-top: 15px;
   // padding: 8px 0;
   // input,
   // select,
@@ -25,10 +25,18 @@
   //   text-align: left;
   //   margin: 4px 14px 0px;
   // }
+  .MuiFormLabel-root-MuiInputLabel-root {
+    font-size: 11px !important;
+  }
+
+  .MuiInputBase-root-MuiInput-root:before {
+    border-bottom: 1px solid #00000021;
+  }
   &.no-margin {
     margin-top: 0px;
   }
   .error {
     color: var(--red);
+    font-size: 0.7rem !important;
   }
 }

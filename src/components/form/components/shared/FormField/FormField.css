@@ -1,6 +1,14 @@
 .form-field {
   width: 100%;
-  margin-top: 20px;
+  margin-top: 15px;
+}
+
+.form-field .MuiFormLabel-root-MuiInputLabel-root {
+  font-size: 11px !important;
+}
+
+.form-field .MuiInputBase-root-MuiInput-root:before {
+  border-bottom: 1px solid #00000021;
 }
 
 .form-field.no-margin {
@@ -9,5 +17,6 @@
 
 .form-field .error {
   color: var(--red);
+  font-size: 0.7rem !important;
 }
 /*# sourceMappingURL=FormField.css.map */

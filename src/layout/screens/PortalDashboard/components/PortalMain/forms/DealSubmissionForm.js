@@ -6,6 +6,7 @@ import PhoneNumber from "../../../../../../components/form/components/inputs/gen
 import { setFormState } from "../../../../../../redux/actions/formStateActions";
 import FirstNameField from "../../../../../../components/form/components/inputs/specifc/FirstNameField";
 import LastNameField from "../../../../../../components/form/components/inputs/specifc/LastNameField";
+import TextField from "../../../../../../components/form/components/inputs/generic/TextField";
 // import "./DealSubmissionForm.css";
 
 const DealSubmissionForm = (props) => {
@@ -15,14 +16,11 @@ const DealSubmissionForm = (props) => {
     dispatch(setFormState);
   };
   return (
-    <div className="DealSubmissionForm-outer-wrapper">
-      <Form id="newDealSubmission" initialValues={state.formState}>
-        <FirstNameField />
-        <LastNameField />
-
-        <PhoneNumber name="phoneNumber" />
-      </Form>
-    </div>
+    <>
+      <TextField name="loanType" label="Loan Type" />
+      <TextField name="loanPurpose" label="Loan Purpose" />
+      <TextField name="propertyAddress" label="Property Address" />
+    </>
   );
 };
 

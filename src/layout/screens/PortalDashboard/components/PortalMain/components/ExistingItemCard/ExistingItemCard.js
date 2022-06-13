@@ -4,11 +4,8 @@ import "./ExistingItemCard.css";
 const ExistingItemCard = (props) => {
   return (
     <div className="new-card-item">
-      <h3>
-        {props.data.firstName} {props.data.lastName}
-      </h3>
-      <p>Submitted on: {props.data.submissionDate}</p>
-      <p>Status: In Progress</p>
+      <h3>{props.title}</h3>
+      {props.children}
       <div className="card-button-wrapper">
         <button onClick={props.onClick} className="card-button">
           {/* <span className="title">Edit</span> */}

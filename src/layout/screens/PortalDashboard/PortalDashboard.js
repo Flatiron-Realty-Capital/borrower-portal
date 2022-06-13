@@ -12,7 +12,7 @@ const PortalDashboard = (props) => {
   const [mobileNavIsActive, setmobileNavIsActive] = React.useState(false);
   const [formType, setFormType] = React.useState("credit");
   const toggleForm = (title) => {
-    setFormType(title);
+    // setFormType(title);
     setFormIsActive((s) => !s);
   };
 

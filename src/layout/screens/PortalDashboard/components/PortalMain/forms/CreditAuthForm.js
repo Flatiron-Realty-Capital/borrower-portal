@@ -11,6 +11,7 @@ import SignatureCanvas from "react-signature-canvas";
 import PhoneNumber from "../../../../UserAdmission/components/SignInForm/components/inputs/phoneNumber";
 import FormField from "../../../../../../components/form/components/shared/FormField/FormField";
 import Signature from "../../../../../../components/form/components/inputs/generic/Signature/Signature";
+import { VALIDATOR_REQUIRE } from "../../../../../../helpers/validators/inputValidators";
 // import Form from "../../../../UserAdmission/components/SignInForm/SignInForm";
 // import "./CreditAuthForm.css";
 
@@ -30,14 +31,15 @@ const CreditAuthForm = (props) => {
         <FirstNameField />
         <LastNameField />
       </Columns>
-      <TextField name="dob" label="Date of Birth" />
+      <TextField name="borrowerDob" label="Date of Birth" />
       <TextField name="homeAddress" label="Home Address" />
-      <PhoneNumber />
-      <EmailField name="emailAddress" label="Email Address" isRequired />
+      <TextField name="borrowerPhoneNumber" label="Phone Number" />
+      {/* <PhoneNumber /> */}
+      <EmailField name="borrowerEmail" label="Email Address" isRequired />
       <TextField name="isUsCitizen" label="Borrower is a US Citizen" />
-      <TextField name="ssnNumber" label="Social Security NUmber" />
-      <FileUpload />
-      <Signature />
+      <TextField name="ssnNumber" label="Social Security Number" />
+      <FileUpload name="borrowerPhotoId" label="Please upload a photo ID" />
+      <Signature name="borrowerSignature" label="Borrower Signature" />
     </>
   );
 };

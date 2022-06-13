@@ -1,19 +1,19 @@
 export const setDealSubmissionsState = (state) => {
   return {
-    type: "SET_CREDIT_AUTH_STATE",
+    type: "SET_DEAL_SUBMISSIONS_STATE",
     payload: state,
   };
 };
 
 export const updateDealSubmissionsState = (data) => {
   return {
-    type: "UPDATE_CREDIT_AUTH_STATE",
+    type: "UPDATE_DEAL_SUBMISSIONS_STATE",
     payload: data,
   };
 };
 
 export const clearDealSubmissionsState = () => {
   return {
-    type: "CLEAR_CREDIT_AUTH_STATE",
+    type: "CLEAR_DEAL_SUBMISSIONS_STATE",
   };
 };

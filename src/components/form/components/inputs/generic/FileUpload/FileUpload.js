@@ -9,14 +9,28 @@ import {
 } from "../../../../../../redux/actions/formStateActions";
 import FormField from "../../../shared/FormField/FormField";
 import FormLabel from "../../../shared/FormLabel/FormLabel";
+import { Field, useFormState } from "react-final-form";
+import { OutlinedInput } from "@mui/material";
 // import "./FileUpload.css";
 
 const FileUpload = (props) => {
-  const [files, setFiles] = useState([]);
-  const dispatch = useDispatch();
-  const fileTypes = ["JPEG", "JPG", "PNG", "GIF", "PDF"];
-  const imageUploadRef = useRef(null);
+  return (
+    <FormField id="file-upload">
+      <FormLabel text={props.label} />
+      <Field name={props.name} {...props} component={FileFieldInput} />
+      <Field
+        name={props.name}
+        subscribe={{ touched: true, error: true }}
+        render={({ meta: { touched, error } }) =>
+          touched && error ? <span>{error}</span> : null
+        }
+      />
+    </FormField>
+  );
+};
 
+function FileFieldInput({ required, input, dropZoneProps, ...props }) {
+  const [selectedFile, setFile] = useState("");
   const { getRootProps, getInputProps } = useDropzone({
     accept: {
       "image/png": [".png"],
@@ -25,82 +39,47 @@ const FileUpload = (props) => {
       "application/pdf": [".pdf"],
     },
     onDrop: (acceptedFiles) => {
-      let previewUrl = URL.createObjectURL(acceptedFiles[0]);
-      // console.log(preview);
-      dispatch(
-        updateFormState({
-          key: "fileUpload",
-          value: previewUrl,
-        })
-      );
-      setFiles(
-        acceptedFiles.map((file) =>
-          Object.assign(file, {
-            preview: URL.createObjectURL(file),
-          })
-        )
-      );
+      const acceptedFile = acceptedFiles[0];
+      console.log("acceptedFile", acceptedFile);
+      const previewUrl = Object.assign(acceptedFile, {
+        preview: URL.createObjectURL(acceptedFile),
+      });
+      setFile(previewUrl);
+      input.onChange(previewUrl.preview);
+      console.log("previewUrl", previewUrl);
     },
   });
 
-  const clearFileHandler = () => {
-    setFiles([]);
-  };
-
-  const fileThumbnails = files.map((file) => (
-    <div key={file.name} className="file-upload-preview">
-      <button onClick={clearFileHandler} id="close" className="icon-wrapper">
+  const fileThumbnail = (
+    <div key={selectedFile.name} className="file-upload-preview">
+      <button onClick={() => setFile("")} id="close" className="icon-wrapper">
         {closeIcon}
       </button>
-      {file.type === "application/pdf" ? (
+      {selectedFile.type === "application/pdf" ? (
         <div id="pdf" className="icon-wrapper">
           {pdfIcon}
         </div>
       ) : (
-        <img src={file.preview} alt="" srcset="" />
+        <img src={selectedFile.preview} alt="" srcset="" />
       )}
-
-      <p className="file-path"> {file.path}</p>
     </div>
-  ));
-
-  useEffect(() => {
-    // Make sure to revoke the data uris to avoid memory leaks, will run on unmount
-    return () => files.forEach((file) => URL.revokeObjectURL(file.preview));
-  }, []);
-  return (
-    <FormField id="file-upload">
-      <FormLabel text="Please upload a photo ID" />
-
-      <div className="file-upload-inner-content">
-        <div {...getRootProps({ className: "file-upload-box" })}>
-          <input {...getInputProps()} />
-
-          {uploadIcon}
-          <span className="file-upload__title">
-            Drag 'n' drop or click to select file
-          </span>
-        </div>
-        {fileThumbnails}
-      </div>
-
-      {/* {files && filePreview} */}
-      {/* <FileUploader
-        name="sda"
-        handleChange={handleChange}
-        label="Click or drag file to upload"
-        types={fileTypes}
-        hoverTitle="Drop here"
-        multiple={false}
-      />
-      {file && (
-        <p>{file ? `File name: ${file.name}` : "no files uploaded yet"}</p>
-      )}
-      {file && filePreview} */}
-    </FormField>
   );
-};
 
+  return (
+    <div className="file-upload-inner-content">
+      <div {...getRootProps({ className: "file-upload-box" })}>
+        <input {...getInputProps()} />
+        {uploadIcon}
+        <span className="file-upload__title">
+          {selectedFile
+            ? selectedFile.path
+            : "Drag 'n' drop or click to select file"}
+        </span>
+      </div>
+      {selectedFile && fileThumbnail}
+    </div>
+  );
+}
 export default FileUpload;
 const uploadIcon = (
   <svg viewBox="0 0 24 24">

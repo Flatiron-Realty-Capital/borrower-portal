@@ -18,7 +18,7 @@ $boxHeight: 100px;
       transition: 200ms;
       color: var(--blue);
       width: 100%;
-      height: 120px;
+      height: 100px;
       cursor: pointer;
       min-width: 0;
       &:hover {
@@ -26,7 +26,7 @@ $boxHeight: 100px;
       }
       svg {
         fill: var(--blue);
-        height: 36px;
+        height: 24px;
       }
       .file-upload__title {
         margin-top: 5px;

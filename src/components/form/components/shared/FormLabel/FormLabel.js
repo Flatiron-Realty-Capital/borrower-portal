@@ -5,7 +5,10 @@ import "./FormLabel.css";
 const FormLabel = (props) => {
   return (
     <div id="" className="form-label">
-      <InputLabel> {props.text} </InputLabel>
+      <InputLabel sx={{ fontSize: ".8rem", fontWeight: 600, opacity: ".8" }}>
+        {" "}
+        {props.text}{" "}
+      </InputLabel>
     </div>
   );
 };

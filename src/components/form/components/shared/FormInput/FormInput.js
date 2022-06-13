@@ -12,18 +12,12 @@ import {
 import { updateFormState } from "../../../../../redux/actions/formStateActions";
 import { useDispatch, useSelector } from "react-redux";
 import FormField from "../FormField/FormField";
-
-const inputReducer = (state, action) => {
-  switch (action.type) {
-    case "CHANGE":
-      return {
-        ...state,
-        value: action.val,
-      };
-    default:
-      return state;
-  }
-};
+import { makeStyles } from "@mui/styles";
+const useStyles = makeStyles({
+  root: {
+    fontSize: "8px",
+  },
+});
 
 const FormInput = (props) => {
   const {
@@ -40,6 +34,8 @@ const FormInput = (props) => {
     onKeyDown,
     onFocus,
   } = props;
+
+  const classes = useStyles();
 
   //Functions
   const handleDefaultInputChange = (e) => {
@@ -77,8 +73,8 @@ const FormInput = (props) => {
         {({ input, meta }) => (
           <FormControl fullWidth variant="outlined">
             <InputLabel
-              // sx={{ fontSize: ".6rem" }}
-              // size="small"
+              sx={{ fontSize: ".8rem", fontWeight: 600, opacity: ".6" }}
+              size="small"
               htmlFor="outlined-adornment-password"
             >
               {label}
@@ -86,6 +82,7 @@ const FormInput = (props) => {
             <OutlinedInput
               fullWidth
               // size="small"
+
               id="outlined-adornment-password"
               type={type}
               value={value}
@@ -94,9 +91,12 @@ const FormInput = (props) => {
               endAdornment={icon && inputIcon}
               label={label}
               onBlur={onBlur}
+              className={classes.root}
               onFocus={onFocus}
               onKeyDown={onKeyDown}
               isRequired
+              size="small"
+              margin="dence"
               {...input}
             />
             {meta.error && meta.touched && (

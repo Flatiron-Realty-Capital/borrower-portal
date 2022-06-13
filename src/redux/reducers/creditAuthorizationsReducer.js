@@ -1,13 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
 
-const formInitStat = [
-  {
-    id: "1234",
-    firstName: "John",
-    lastName: "Smith",
-    submissionDate: "5/12/22",
-  },
-];
+const formInitStat = [];
 
 const creditAuthorizationsReducer = (state = formInitStat, action) => {
   switch (action.type) {

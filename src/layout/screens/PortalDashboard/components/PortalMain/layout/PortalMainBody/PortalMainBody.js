@@ -1,28 +1,27 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import ExistingItemCard from "../../components/ExistingItemCard/ExistingItemCard";
-import NewItemCard from "../../components/NewItemCard/NewItemCard";
+// import NewItemCard from "../../components/NewItemCard/NewItemCard";
+import AddFormOverlay from "../../../AddFormOverlay/AddFormOverlay";
 import PortalRowItem from "../../components/PortalRowItem/PortalRowItem";
 import "./PortalMainBody.css";
-
-const EXISTING_CREDIT_AUTH_DUMMY = [
-  {
-    id: "1234",
-    firstName: "John",
-    lastName: "Smith",
-    submissionDate: "5/12/22",
-  },
-  {
-    id: "1234",
-    firstName: "Jimmy",
-    lastName: "Oliva",
-    submissionDate: "6/9/22",
-  },
-];
+import CreditAuthForm from "../../forms/CreditAuthForm";
+import DealSubmissionForm from "../../forms/DealSubmissionForm";
+import DealSubmissionRow from "./rows/DealSubmissionRow";
+import CreditAuthRow from "./rows/CreditAuthRow";
 
 const PortalMainBody = (props) => {
+  const [formIsActive, setFormIsActive] = React.useState(false);
   const creditAuths = useSelector((state) => state.creditAuthorizations);
   const dealSubmissions = useSelector((state) => state.dealSubmissions);
+  const toggleForm = (title) => {
+    // setFormType(title);
+    setFormIsActive((s) => !s);
+  };
+  const viewCardDetailsHandler = (email) => {
+    props.toggleForm();
+    console.log("API REQUEST TO CREDIT AUTH COLLECTION ->", email);
+  };
   return (
     <section className="portal-body">
       {/* <div className="portal-body__header">
@@ -30,33 +29,8 @@ const PortalMainBody = (props) => {
         <p>What would you like to first?</p>
       </div> */}
       <div className="portal-body__content-area">
-        <PortalRowItem
-          addNewOnClick={() => props.toggleForm("credit")}
-          title="Credit Authorizations"
-        >
-          {creditAuths.length !== 0 && (
-            <div className="existing-item-row">
-              {creditAuths.map((a) => {
-                return (
-                  <ExistingItemCard
-                    data={a}
-                    onClick={() => props.toggleForm("credit")}
-                  />
-                );
-              })}
-            </div>
-          )}
-        </PortalRowItem>
-        <PortalRowItem
-          addNewOnClick={() => props.toggleForm("credit")}
-          title="Deal Submissions"
-        >
-          <NewItemCard
-            title="Create New Deal"
-            description="Submit a deal for a new property"
-            onClick={() => props.toggleForm("")}
-          />
-        </PortalRowItem>
+        <CreditAuthRow />
+        <DealSubmissionRow />
       </div>
     </section>
   );
