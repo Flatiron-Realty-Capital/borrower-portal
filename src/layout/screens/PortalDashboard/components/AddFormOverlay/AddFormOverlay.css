@@ -37,6 +37,7 @@
   z-index: 111111111;
   -webkit-animation: easeInFromRight 140ms ease normal forwards;
           animation: easeInFromRight 140ms ease normal forwards;
+  overflow-y: auto;
 }
 
 #form-overlay .form-container .form-inner-wrapper {

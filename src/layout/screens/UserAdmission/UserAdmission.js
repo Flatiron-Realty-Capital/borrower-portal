@@ -1,6 +1,5 @@
 import React from "react";
 import BackgroundShape from "./components/backgroundShape/backgroundShape";
-// import SignInForm from "./components/SignInForm/SignInForm";
 import FormSection from "./sections/FormSection/FormSection";
 import StatsSection from "./sections/StatsSection/StatsSection";
 import "./UserAdmission.css";

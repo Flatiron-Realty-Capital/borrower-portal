@@ -4,8 +4,8 @@ import { SpinnerDotted } from "spinners-react";
 import { Checkbox, FormControlLabel } from "@mui/material";
 
 import Logo from "../../../../../assets/images/logo.png";
-import ExistingUserFormFields from "./components/existingUser";
-import NewAccountFormFields from "./components/newAccount";
+// import ExistingUserFormFields from "./components/existingUser";
+// import NewAccountFormFields from "./components/newAccount";
 
 import "./SignInForm.css";
 import { useHttpClient } from "../../../../../hooks/http-hook";
@@ -90,7 +90,7 @@ const Form = () => {
       </div>
 
       <div className="form__body">
-        {isExistingUser ? <ExistingUserFormFields /> : <NewAccountFormFields />}
+        {/* {isExistingUser ? <ExistingUserFormFields /> : <NewAccountFormFields />} */}
 
         <div className="form__buttons">
           {isExistingUser && (

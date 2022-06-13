@@ -78,7 +78,7 @@ const FileUpload = (props) => {
 
           {uploadIcon}
           <span className="file-upload__title">
-            Drag 'n' drop some files here, or click to select files
+            Drag 'n' drop or click to select file
           </span>
         </div>
         {fileThumbnails}

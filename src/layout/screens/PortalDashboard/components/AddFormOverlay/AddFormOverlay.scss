@@ -29,6 +29,7 @@
     opacity: 0;
     z-index: 111111111;
     animation: easeInFromRight 140ms ease normal forwards;
+    overflow-y: auto;
     .form-inner-wrapper {
       position: relative;
       .inner-wrapper__header {
