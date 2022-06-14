@@ -1,4 +1,4 @@
-const isDebug = true;
+const isDebug = false;
 
 export const backendEndpoint = isDebug
   ? "http://127.0.0.1:8000/"

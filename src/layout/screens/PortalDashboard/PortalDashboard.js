@@ -26,9 +26,9 @@ const PortalDashboard = (props) => {
         onCancel={() => setmobileNavIsActive(false)}
         show={mobileNavIsActive}
       />
-      {formIsActive && (
+      {/* {formIsActive && (
         <AddFormOverlay toggleForm={toggleForm} formType={formType} />
-      )}
+      )} */}
       <PortalVerticalNav handleMobileNavToggle={handleMobileNavToggle} />
       <PortalMain toggleForm={toggleForm} />
     </div>

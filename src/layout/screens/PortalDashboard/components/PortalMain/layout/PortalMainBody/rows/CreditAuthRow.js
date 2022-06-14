@@ -27,11 +27,12 @@ const CreditAuthRow = (props) => {
     setIsNewForm(true);
   };
 
-  const viewExistingFormHandler = (borrowerEmail) => {
-    console.log("email: ", borrowerEmail);
+  const viewExistingFormHandler = (userId) => {
+    console.log("email: ", userId);
     setFormActive((s) => !s);
     setIsNewForm(false);
-    let user = creditAuths.filter((u) => u.borrowerEmail === borrowerEmail);
+    // fetch(`endpoiinturl/form?${userId}`)
+    let user = creditAuths.filter((u) => u.userId === userId);
     console.log("email: ", user[0]);
     setSelectedFormData(user[0]);
   };
@@ -43,49 +44,48 @@ const CreditAuthRow = (props) => {
     console.log("updatedState", updatedState);
     dispatch(addCreditAuth(updatedState));
     setFormActive(false);
-    // let endpointURL = isExistingUser
-    //   ? "https://frcbackend.azurewebsites.net/login"
-    //   : "https://frcbackend.azurewebsites.net/createAccount"; //If seperate enpoints are even required. If not, just the single endpoint
+    let endpointURL = "https://frcbackend.azurewebsites.net/form";
 
-    // const requestOptions = {
-    //   method: "POST",
-    //   headers: { "Content-Type": "application/json" },
-    //   body: JSON.stringify(state),
-    // };
+    const requestOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json", formType: "creditAuth" },
 
-    // try {
-    //   // setIsLoading(true);
-    //   const response = await fetch(endpointURL, requestOptions);
-    //   console.log("response", response);
-    //   const responseData = await response.json();
-    //   console.log("responseData", responseData);
-    // } catch (error) {
-    //   console.log(error);
-    // }
+      body: JSON.stringify(state),
+    };
+
+    try {
+      // setIsLoading(true);
+      const response = await fetch(endpointURL, requestOptions);
+      console.log("response", response);
+      const responseData = await response.json();
+      console.log("responseData", responseData);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
-    <PortalRowItem addNewOnClick={newFormHandler} title="Deal Submissions">
+    <PortalRowItem addNewOnClick={newFormHandler} title="Credit Authorizations">
       {creditAuths.length !== 0 && (
         <div className="existing-item-row">
-          {creditAuths.map((a) => {
+          {creditAuths.map((borrower) => {
             return (
               <ExistingItemCard
-                data={a}
-                title={`${a.firstName} ${a.lastName}`}
-                onClick={() => viewExistingFormHandler(a.borrowerEmail)}
+                data={borrower}
+                title={`${borrower.firstName} ${borrower.lastName}`}
+                onClick={() => viewExistingFormHandler(borrower.borrowerID)}
               >
                 <p>
                   <span>Date of Birth:</span>
-                  {a.borrowerDob}
+                  {borrower.borrowerDob}
                 </p>
                 <p>
                   <span>Email:</span>
-                  {a.borrowerEmail}
+                  {borrower.borrowerEmail}
                 </p>
                 <p>
                   <span>Submitted:</span>
-                  {a.submissionDate}
+                  {borrower.submissionDate}
                 </p>
               </ExistingItemCard>
             );
@@ -97,7 +97,7 @@ const CreditAuthRow = (props) => {
         <AddFormOverlay
           title={
             isNewForm
-              ? "New Credit Authorization Submission"
+              ? "Create New Credit Authorization"
               : `Edit Details for ${selectedFormData.firstName} ${selectedFormData.lastName}`
           }
           description="Example paragraph text about deal submissions."
