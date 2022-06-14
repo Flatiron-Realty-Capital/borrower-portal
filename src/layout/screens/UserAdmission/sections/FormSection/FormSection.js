@@ -18,6 +18,7 @@ import { setCreditAuthState } from "../../../../../redux/actions/creditAuthoriza
 import { setDealSubmissionsState } from "../../../../../redux/actions/dealSubmissionsActions";
 import { setAccountInfoState } from "../../../../../redux/actions/accountInfoActions";
 import { DUMMY_FULL_RESPONSE_DATA } from "../../../../../tests/responseData";
+import { backendEndpoint } from "../../../../../global/endpoints";
 
 const FormSection = (props) => {
   const [isLoading, setIsLoading] = React.useState(false);
@@ -31,8 +32,8 @@ const FormSection = (props) => {
     console.log("Send Data to endpoint ->", state);
 
     let endpointURL = isExistingUser
-      ? "https://frcbackend.azurewebsites.net/login"
-      : "https://frcbackend.azurewebsites.net/createAccount"; //If seperate enpoints are even required. If not, just the single endpoint
+      ? `${backendEndpoint}/login`
+      : `${backendEndpoint}/createAccount`; //If seperate enpoints are even required. If not, just the single endpoint
 
     const requestOptions = {
       method: "POST",
