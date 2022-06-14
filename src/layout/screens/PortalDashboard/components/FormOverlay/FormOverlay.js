@@ -7,9 +7,9 @@ import Backdrop from "../../../../../components/shared/Backdrop/Backdrop";
 import { addCreditAuth } from "../../../../../redux/actions/creditAuthorizationsActions";
 import CreditAuthForm from "../PortalMain/forms/CreditAuthForm";
 import DealSubmissionForm from "../PortalMain/forms/DealSubmissionForm";
-import "./AddFormOverlay.css";
+import "./FormOverlay.css";
 
-const AddFormOverlay = (props) => {
+const FormOverlaylay = (props) => {
   const [isLoading, setIsLoading] = React.useState(false);
   const formState = useSelector((state) => state.formState);
   const dispatch = useDispatch();
@@ -75,7 +75,7 @@ const AddFormOverlay = (props) => {
   );
 };
 
-export default AddFormOverlay;
+export default FormOverlaylay;
 
 const cross = (
   <svg viewBox="0 0 24 24">

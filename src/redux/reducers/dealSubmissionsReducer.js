@@ -14,9 +14,13 @@ const dealSubmissionsReducer = (state = formInitStat, action) => {
     case "SET_DEAL_SUBMISSIONS_STATE":
       return action.payload;
     case "UPDATE_DEAL_SUBMISSIONS_STATE":
-      let newState = { ...state };
-      newState[action.payload.key] = action.payload.value;
-      return newState;
+      let spreadState = [...state];
+      console.log("old state -->", spreadState);
+      let filteredState = spreadState.filter((i) => i.id !== action.payload.id);
+      console.log("filteredState", filteredState);
+      let updatedState = [...filteredState, { ...action.payload }];
+      console.log("updatedState -->", updatedState);
+      return updatedState;
 
     case "CLEAR_DEAL_SUBMISSIONS_STATE":
       return formInitStat;

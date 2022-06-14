@@ -40,6 +40,7 @@ export const DUMMY_RESPONSE_DATA = {
 
 export const DUMMY_FULL_RESPONSE_DATA = {
   userData: {
+    id: "abcdefghijk",
     firstName: "Jimmy",
     lastName: "Oliva",
     emailAddress: "Oliva",
@@ -48,6 +49,7 @@ export const DUMMY_FULL_RESPONSE_DATA = {
   },
   creditAuths: [
     {
+      id: "12345678",
       submissionDate: "5/12/22",
       firstName: "Jimmy",
       lastName: "Oliva",
@@ -63,13 +65,13 @@ export const DUMMY_FULL_RESPONSE_DATA = {
   ],
   dealSubmissions: [
     {
-      dealId: "651681",
+      id: "651681",
       loanType: "Purchase",
       loanPurpose: "Rehab to Flip Loan",
       propertyAddress: "125 Main Street, Huntington NY, 11743",
     },
     {
-      dealId: "377345",
+      id: "377345",
       loanType: "Refinance",
       loanPurpose: "Short Term Bridge Loan",
       propertyAddress: "80 Wall Street, Northport NY, 11768",

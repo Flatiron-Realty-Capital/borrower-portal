@@ -65,13 +65,16 @@ function SignatureInput({ required, input, ...props }) {
     // dispatch(updateFormState({ key: props.name, value: sig }));
   };
   return (
-    <SignatureCanvas
-      penColor="#235685"
-      ref={sigRef}
-      onEnd={trimHandler}
-      canvasProps={{ height: 110, className: "sigCanvas" }}
-      {...props}
-    />
+    <>
+      <FormLabel text={props.label} />
+      <SignatureCanvas
+        penColor="#235685"
+        ref={sigRef}
+        onEnd={trimHandler}
+        canvasProps={{ height: 110, className: "sigCanvas" }}
+        {...props}
+      />
+    </>
   );
 }
 export default Signature;

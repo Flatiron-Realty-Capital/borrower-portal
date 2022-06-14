@@ -1,6 +1,7 @@
 import React from "react";
-import { useSelector } from "react-redux";
-import AddFormOverlay from "../../../../AddFormOverlay/AddFormOverlay";
+import { useSelector, useDispatch } from "react-redux";
+import { updateDealSubmission } from "../../../../../../../../redux/actions/dealSubmissionsActions";
+import FormOverlaylay from "../../../../FormOverlay/FormOverlay";
 import ExistingItemCard from "../../../components/ExistingItemCard/ExistingItemCard";
 import PortalRowItem from "../../../components/PortalRowItem/PortalRowItem";
 import DealSubmissionForm from "../../../forms/DealSubmissionForm";
@@ -11,6 +12,7 @@ const DealSubmissionRow = (props) => {
   const [isNewForm, setIsNewForm] = React.useState(false);
   const [selectedFormData, setSelectedFormData] = React.useState({});
 
+  const dispatch = useDispatch();
   const dealSubmissions = useSelector((state) => state.dealSubmissions);
   const accountInfo = useSelector((state) => state.accountInfo);
 
@@ -24,19 +26,47 @@ const DealSubmissionRow = (props) => {
     setSelectedFormData({});
     setIsNewForm(true);
   };
-
-  const viewExistingFormHandler = (dealId) => {
-    console.log("dealId: ", dealId);
+  const viewExistingFormHandler = (id) => {
+    console.log("Viewing: ", id);
     setFormActive((s) => !s);
     setIsNewForm(false);
-    let deal = dealSubmissions.filter((e) => e.dealId === dealId);
-    console.log("dealId: ", deal[0]);
+    let deal = dealSubmissions.filter((u) => u.id === id);
+    console.log("email: ", deal[0]);
     setSelectedFormData(deal[0]);
   };
 
-  const onSubmitHandler = () => {
-    console.log("Submit");
+  const updateExistingFormHandler = async (state) => {
+    console.log("Update Form for: ", state);
+    setSelectedFormData(state);
+    setIsNewForm(false);
+    // const responseData = await sendRequest(
+    //   endPointDestinations.FORM,
+    //   selectedFormData
+    // );
+
+    dispatch(updateDealSubmission(state));
+    setFormActive(false);
+    // if (responseData.Error) {
+    //   console.log("Success");
+    //   dispatch(updateCreditAuthState(state));
+    //   setFormActive(false);
+    // }
   };
+
+  ///////
+
+  // const viewExistingFormHandler = (id) => {
+  //   console.log("id: ", id);
+  //   setFormActive((s) => !s);
+  //   setIsNewForm(false);
+  //   let deal = dealSubmissions.filter((e) => e.id === id);
+  //   console.log("id: ", deal[0]);
+  //   setSelectedFormData(deal[0]);
+  // };
+
+  // const onSubmitHandler = () => {
+  //   console.log("Submit");
+  // };
 
   return (
     <PortalRowItem addNewOnClick={newFormHandler} title="Deal Submissions">
@@ -46,8 +76,8 @@ const DealSubmissionRow = (props) => {
             return (
               <ExistingItemCard
                 data={a}
-                title={`ID: ${a.dealId}`}
-                onClick={() => viewExistingFormHandler(a.dealId)}
+                title={`ID: ${a.id}`}
+                onClick={() => viewExistingFormHandler(a.id)}
               >
                 <p>
                   <span>Loan Type:</span>
@@ -68,15 +98,15 @@ const DealSubmissionRow = (props) => {
       )}
 
       {formActive && (
-        <AddFormOverlay
+        <FormOverlaylay
           title={isNewForm ? "New Deal Submission" : "Details For Submission"}
           description="Example paragraph text about deal submissions."
           close={toggleForm}
-          onSubmit={onSubmitHandler}
-          initialValues={selectedFormData}
+          onSubmit={updateExistingFormHandler}
+          initialValues={isNewForm ? accountInfo : selectedFormData}
         >
           <DealSubmissionForm />
-        </AddFormOverlay>
+        </FormOverlaylay>
       )}
     </PortalRowItem>
   );

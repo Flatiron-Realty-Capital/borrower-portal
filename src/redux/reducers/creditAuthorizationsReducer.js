@@ -7,9 +7,13 @@ const creditAuthorizationsReducer = (state = formInitStat, action) => {
     case "SET_CREDIT_AUTH_STATE":
       return action.payload;
     case "UPDATE_CREDIT_AUTH_STATE":
-      let newState = { ...state };
-      newState[action.payload.key] = action.payload.value;
-      return newState;
+      let spreadState = [...state];
+      console.log("old state -->", spreadState);
+      let filteredState = spreadState.filter((i) => i.id !== action.payload.id);
+      console.log("filteredState", filteredState);
+      let updatedState = [...filteredState, { ...action.payload }];
+      console.log("updatedState -->", updatedState);
+      return updatedState;
     case "ADD_CREDIT_AUTH":
       return [...state, action.payload];
 

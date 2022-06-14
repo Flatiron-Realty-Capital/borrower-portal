@@ -1,8 +1,13 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { addCreditAuth } from "../../../../../../../../redux/actions/creditAuthorizationsActions";
+import { endPointDestinations } from "../../../../../../../../global/endPointDestinations";
+import { usePostRequest } from "../../../../../../../../hooks/helpers/usePostRequest";
+import {
+  addCreditAuth,
+  updateCreditAuthState,
+} from "../../../../../../../../redux/actions/creditAuthorizationsActions";
 import { DUMMY_FULL_RESPONSE_DATA } from "../../../../../../../../tests/responseData";
-import AddFormOverlay from "../../../../AddFormOverlay/AddFormOverlay";
+import FormOverlaylay from "../../../../FormOverlay/FormOverlay";
 import ExistingItemCard from "../../../components/ExistingItemCard/ExistingItemCard";
 import PortalRowItem from "../../../components/PortalRowItem/PortalRowItem";
 import CreditAuthForm from "../../../forms/CreditAuthForm";
@@ -10,6 +15,7 @@ import CreditAuthForm from "../../../forms/CreditAuthForm";
 const CreditAuthRow = (props) => {
   const [formActive, setFormActive] = React.useState(false);
   const [isNewForm, setIsNewForm] = React.useState(false);
+  const { isLoading, error, sendRequest, clearError } = usePostRequest();
   const [selectedFormData, setSelectedFormData] = React.useState({});
   const dispatch = useDispatch();
   // const creditAuths = DUMMY_FULL_RESPONSE_DATA.creditAuths;
@@ -27,41 +33,30 @@ const CreditAuthRow = (props) => {
     setIsNewForm(true);
   };
 
-  const viewExistingFormHandler = (userId) => {
-    console.log("email: ", userId);
+  const viewExistingFormHandler = (id) => {
+    console.log("Viewing: ", id);
     setFormActive((s) => !s);
     setIsNewForm(false);
-    // fetch(`endpoiinturl/form?${userId}`)
-    let user = creditAuths.filter((u) => u.userId === userId);
+    let user = creditAuths.filter((u) => u.id === id);
     console.log("email: ", user[0]);
     setSelectedFormData(user[0]);
   };
 
-  const handleSubmit = async (state) => {
-    console.log("Send Data to endpoint ->", state);
-    const submissionDate = { submissionDate: "date" };
-    let updatedState = { ...state, ...submissionDate };
-    console.log("updatedState", updatedState);
-    dispatch(addCreditAuth(updatedState));
+  const updateExistingFormHandler = async (state) => {
+    console.log("Update Form for: ", state);
+    setSelectedFormData(state);
+    setIsNewForm(false);
+    // const responseData = await sendRequest(
+    //   endPointDestinations.FORM,
+    //   selectedFormData
+    // );
+    dispatch(updateCreditAuthState(state));
     setFormActive(false);
-    let endpointURL = "https://frcbackend.azurewebsites.net/form";
-
-    const requestOptions = {
-      method: "POST",
-      headers: { "Content-Type": "application/json", formType: "creditAuth" },
-
-      body: JSON.stringify(state),
-    };
-
-    try {
-      // setIsLoading(true);
-      const response = await fetch(endpointURL, requestOptions);
-      console.log("response", response);
-      const responseData = await response.json();
-      console.log("responseData", responseData);
-    } catch (error) {
-      console.log(error);
-    }
+    // if (responseData.Error) {
+    //   console.log("Success");
+    //   dispatch(updateCreditAuthState(state));
+    //   setFormActive(false);
+    // }
   };
 
   return (
@@ -73,7 +68,7 @@ const CreditAuthRow = (props) => {
               <ExistingItemCard
                 data={borrower}
                 title={`${borrower.firstName} ${borrower.lastName}`}
-                onClick={() => viewExistingFormHandler(borrower.borrowerID)}
+                onClick={() => viewExistingFormHandler(borrower.id)}
               >
                 <p>
                   <span>Date of Birth:</span>
@@ -94,7 +89,7 @@ const CreditAuthRow = (props) => {
       )}
 
       {formActive && (
-        <AddFormOverlay
+        <FormOverlaylay
           title={
             isNewForm
               ? "Create New Credit Authorization"
@@ -103,11 +98,11 @@ const CreditAuthRow = (props) => {
           description="Example paragraph text about deal submissions."
           submitButtonText={isNewForm ? "Submit" : "Update & Save Information"}
           close={toggleForm}
-          onSubmit={handleSubmit}
+          onSubmit={updateExistingFormHandler}
           initialValues={isNewForm ? accountInfo : selectedFormData}
         >
           <CreditAuthForm />
-        </AddFormOverlay>
+        </FormOverlaylay>
       )}
     </PortalRowItem>
   );

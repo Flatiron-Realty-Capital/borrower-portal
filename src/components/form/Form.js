@@ -8,10 +8,10 @@ import FormSubmitButton from "./components/shared/FormSubmitButton/FormSubmitBut
 const Form = (props) => {
   const dispatch = useDispatch();
   const handleSubmit = (formObj) => {
-    console.log("formObj", formObj);
+    // console.log("formObj", formObj);
 
     if (props.onClick) {
-      console.log("Custom on Click");
+      // console.log("Custom on Click");
       props.onClick(formObj);
       return;
     }

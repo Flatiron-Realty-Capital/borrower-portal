@@ -5,7 +5,7 @@ export const setDealSubmissionsState = (state) => {
   };
 };
 
-export const updateDealSubmissionsState = (data) => {
+export const updateDealSubmission = (data) => {
   return {
     type: "UPDATE_DEAL_SUBMISSIONS_STATE",
     payload: data,

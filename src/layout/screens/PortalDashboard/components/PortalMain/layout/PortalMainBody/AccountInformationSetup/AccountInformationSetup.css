@@ -1,0 +1,91 @@
+#account-information.modal {
+  background-color: #ffffff;
+  max-width: 740px;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#account-information.modal h2 {
+  font-size: 24px;
+  line-height: 32px;
+  margin-bottom: 5px;
+}
+
+#account-information.modal h3 {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+#account-information.modal p {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+#account-information.modal .form-progress-bar {
+  margin: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 4px;
+  height: 60px;
+}
+
+#account-information.modal .form-progress-bar .form-step {
+  position: relative;
+  bottom: 1px solid gray;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid var(--gray);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-right: none;
+  border-left: none;
+}
+
+#account-information.modal .form-progress-bar .form-step.active {
+  font-weight: bold;
+  color: var(--blue);
+  border-color: var(--blue);
+}
+
+#account-information.modal .form-step-container {
+  padding: 10px 0;
+}
+
+#account-information.modal .footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#account-information.modal .footer button {
+  padding: 10px 14px;
+  border: 1px solid;
+  border-color: var(--gray);
+}
+
+#account-information.modal .footer button#next {
+  color: #ffffff;
+  background-color: var(--blue);
+  border-color: var(--blue);
+}
+/*# sourceMappingURL=AccountInformationSetup.css.map */

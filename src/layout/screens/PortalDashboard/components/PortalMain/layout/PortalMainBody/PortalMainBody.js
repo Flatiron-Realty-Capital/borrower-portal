@@ -2,13 +2,14 @@ import React from "react";
 import { useSelector } from "react-redux";
 import ExistingItemCard from "../../components/ExistingItemCard/ExistingItemCard";
 // import NewItemCard from "../../components/NewItemCard/NewItemCard";
-import AddFormOverlay from "../../../AddFormOverlay/AddFormOverlay";
+import FormOverlaylay from "../../../FormOverlay/FormOverlay";
 import PortalRowItem from "../../components/PortalRowItem/PortalRowItem";
 import "./PortalMainBody.css";
 import CreditAuthForm from "../../forms/CreditAuthForm";
 import DealSubmissionForm from "../../forms/DealSubmissionForm";
 import DealSubmissionRow from "./rows/DealSubmissionRow";
 import CreditAuthRow from "./rows/CreditAuthRow";
+import AccountInformationSetup from "./AccountInformationSetup/AccountInformationSetup";
 
 const PortalMainBody = (props) => {
   const [formIsActive, setFormIsActive] = React.useState(false);
@@ -29,8 +30,9 @@ const PortalMainBody = (props) => {
         <p>What would you like to first?</p>
       </div> */}
       <div className="portal-body__content-area">
-        <CreditAuthRow />
-        <DealSubmissionRow />
+        <AccountInformationSetup />
+        {/* <CreditAuthRow />
+        <DealSubmissionRow /> */}
       </div>
     </section>
   );
