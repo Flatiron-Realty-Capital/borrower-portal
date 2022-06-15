@@ -17,7 +17,10 @@ import Form from "../../../../../components/form/Form";
 import { setCreditAuthState } from "../../../../../redux/actions/creditAuthorizationsActions";
 import { setDealSubmissionsState } from "../../../../../redux/actions/dealSubmissionsActions";
 import { setAccountInfoState } from "../../../../../redux/actions/accountInfoActions";
-import { DUMMY_FULL_RESPONSE_DATA } from "../../../../../tests/responseData";
+import {
+  DUMMY_FULL_RESPONSE_DATA,
+  DUMMY_DATA_EMPTY_CREDIT,
+} from "../../../../../tests/dummyResponseData";
 
 import { usePostRequest } from "../../../../../hooks/helpers/usePostRequest";
 import { endPointDestinations } from "../../../../../global/endPointDestinations";
@@ -39,25 +42,25 @@ const FormSection = (props) => {
 
     try {
       console.log("Send Data to endpoint ->", state);
-      const responseData = await sendRequest(endpointFormType, state);
-      console.log("responseData", responseData);
+      const dummyResponseData = await sendRequest(endpointFormType, state);
+      console.log("dummyResponseData", dummyResponseData);
       <SpinnerDotted size={150} thickness={100} speed={100} color="#235685" />;
 
-      if (responseData.Error) {
-        console.log("Failed Login", responseData);
+      if (dummyResponseData.Error) {
+        console.log("Failed Login", dummyResponseData);
         setRequestFailed(true);
-        throw new Error(responseData);
+        throw new Error(dummyResponseData);
       }
 
-      if (!responseData.Error) {
-        console.log("WORKED, Token =>", responseData);
-        let token = responseData.Authorization;
+      if (!dummyResponseData.Error) {
+        console.log("WORKED, Token =>", dummyResponseData);
+        let token = dummyResponseData.Authorization;
         dispatch(logInUser());
-        dispatch(setCreditAuthState(DUMMY_FULL_RESPONSE_DATA.creditAuths));
+        dispatch(setCreditAuthState(DUMMY_DATA_EMPTY_CREDIT.creditAuths));
         dispatch(
-          setDealSubmissionsState(DUMMY_FULL_RESPONSE_DATA.dealSubmissions)
+          setDealSubmissionsState(DUMMY_DATA_EMPTY_CREDIT.dealSubmissions)
         );
-        dispatch(setAccountInfoState(DUMMY_FULL_RESPONSE_DATA.userData));
+        dispatch(setAccountInfoState(DUMMY_DATA_EMPTY_CREDIT.userData));
         localStorage.setItem(
           "userData",
           JSON.stringify({ userEmail: "test@gmail.com", token: token })

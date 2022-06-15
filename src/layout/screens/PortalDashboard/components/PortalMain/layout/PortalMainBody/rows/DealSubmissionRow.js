@@ -39,14 +39,14 @@ const DealSubmissionRow = (props) => {
     console.log("Update Form for: ", state);
     setSelectedFormData(state);
     setIsNewForm(false);
-    // const responseData = await sendRequest(
+    // const dummyResponseData = await sendRequest(
     //   endPointDestinations.FORM,
     //   selectedFormData
     // );
 
     dispatch(updateDealSubmission(state));
     setFormActive(false);
-    // if (responseData.Error) {
+    // if (dummyResponseData.Error) {
     //   console.log("Success");
     //   dispatch(updateCreditAuthState(state));
     //   setFormActive(false);

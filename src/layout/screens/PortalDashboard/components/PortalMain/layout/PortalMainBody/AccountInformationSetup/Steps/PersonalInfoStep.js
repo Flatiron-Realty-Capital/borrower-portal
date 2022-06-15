@@ -1,12 +1,35 @@
 import React from "react";
+import EmailField from "../../../../../../../../../components/form/components/inputs/generic/EmailField";
 import TextField from "../../../../../../../../../components/form/components/inputs/generic/TextField";
+import FirstNameField from "../../../../../../../../../components/form/components/inputs/specifc/FirstNameField";
+import LastNameField from "../../../../../../../../../components/form/components/inputs/specifc/LastNameField";
+import { genericFieldNameTypes } from "../../../../../../../../../global/formFieldNameTypes";
 
 const PersonalInfoStep = (props) => {
   return (
     <>
-      <h3>Personal Information</h3>
-      <TextField name="borrowerDob" label="Date of Birth" />
-      <TextField name="homeAddress" label="Home Address" />
+      <h3>Personal Contact Details</h3>
+      <FirstNameField />
+      <LastNameField />
+      <TextField name={genericFieldNameTypes.dob} label="Date of Birth" />
+      <TextField
+        name={genericFieldNameTypes.primaryAddressFull}
+        label="Home Address"
+      />
+      <TextField
+        name={genericFieldNameTypes.phoneNumber}
+        label="Phone Number"
+      />
+
+      <EmailField
+        name={genericFieldNameTypes.emailAddress}
+        label="Email Address"
+        isRequired
+      />
+      <TextField
+        name={genericFieldNameTypes.ssnNumber}
+        label="Social Security Number"
+      />
     </>
   );
 };

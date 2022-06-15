@@ -5,6 +5,10 @@ import { removeFormatting } from "../../../../../helpers/phoneNumber/removeForma
 import { formatPhoneNum } from "../../../../../helpers/phoneNumber/formatPhoneNumber";
 import { VALIDATOR_REQUIRE } from "../../../../../helpers/validators/inputValidators";
 import { PhoneOutlined } from "@mui/icons-material";
+import {
+  borrowerFormFieldNameTypes,
+  genericFieldNameTypes,
+} from "../../../../../global/formFieldNameTypes";
 const PhoneNumber = (props) => {
   // const onChangeHandler = (e) => {
   //   let value = e.target.value;
@@ -32,7 +36,7 @@ const PhoneNumber = (props) => {
   return (
     <FormInput
       validators={[VALIDATOR_REQUIRE]}
-      name={props.name ? props.name : "phoneNumber"}
+      name={props.name ? props.name : genericFieldNameTypes.phoneNumber}
       label={props.label ? props.label : "Phone Number"}
       keyName={"phoneNumber"}
       icon={<PhoneOutlined />}

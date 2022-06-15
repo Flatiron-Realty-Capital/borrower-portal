@@ -1,0 +1,35 @@
+.tool-tip-wrapper {
+  position: relative;
+
+  width: 100%;
+  .tool-tip {
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #00000097;
+    font-size: 10px;
+    padding: 2px 6px;
+    width: max-content;
+    line-height: 16px;
+    max-width: 100px;
+    border-radius: 2px;
+    text-align: center;
+    color: #ffffff;
+    opacity: 0;
+    transition: 110ms;
+    &:after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      // margin-left: -50px;
+      width: 0;
+      height: 0;
+      border-top: solid 10px #00000097;
+      border-left: solid 10px transparent;
+      border-right: solid 10px transparent;
+    }
+  }
+}

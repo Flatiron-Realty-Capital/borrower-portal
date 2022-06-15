@@ -59,7 +59,7 @@
 
 #portal-vertical-nav nav {
   position: relative;
-  padding: 28px;
+  padding: 15px;
 }
 
 #portal-vertical-nav nav ul {
@@ -99,7 +99,7 @@
 
 #portal-vertical-nav nav ul li button.nav-link-item .link-item-title {
   color: inherit;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 #portal-vertical-nav nav ul li button.nav-link-item.active {

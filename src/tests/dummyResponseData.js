@@ -78,3 +78,57 @@ export const DUMMY_FULL_RESPONSE_DATA = {
     },
   ],
 };
+
+export const DUMMY_DATA_EMPTY_CREDIT = {
+  userData: {
+    id: "abcdefghijk",
+    firstName: "Jimmy",
+    lastName: "Oliva",
+    emailAddress: "Oliva",
+    phoneNumber: "Oliva",
+    password: "Password!1",
+  },
+  creditAuths: [],
+  dealSubmissions: [
+    {
+      id: "651681",
+      loanType: "Purchase",
+      loanPurpose: "Rehab to Flip Loan",
+      propertyAddress: "125 Main Street, Huntington NY, 11743",
+    },
+    {
+      id: "377345",
+      loanType: "Refinance",
+      loanPurpose: "Short Term Bridge Loan",
+      propertyAddress: "80 Wall Street, Northport NY, 11768",
+    },
+  ],
+};
+
+export const DUMMY_DATA_EMPTY_DEALS = {
+  userData: {
+    id: "abcdefghijk",
+    firstName: "Jimmy",
+    lastName: "Oliva",
+    emailAddress: "Oliva",
+    phoneNumber: "Oliva",
+    password: "Password!1",
+  },
+  creditAuths: [
+    {
+      id: "12345678",
+      submissionDate: "5/12/22",
+      firstName: "Jimmy",
+      lastName: "Oliva",
+      borrowerDob: "11/10/1992",
+      homeAddress: "125 Main Street, Huntington, NY",
+      borrowerPhoneNumber: "631-456-3373",
+      borrowerEmail: "olivajames110@gmail.com",
+      isUsCitizen: true,
+      ssnNumber: "123-45-617",
+      borrowerPhotoId: "homeAddress",
+      borrowerSignature: "homeAddress",
+    },
+  ],
+  dealSubmissions: [],
+};

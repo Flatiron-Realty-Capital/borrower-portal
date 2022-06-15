@@ -31,6 +31,7 @@ const PortalDashboard = (props) => {
       )} */}
       <PortalVerticalNav handleMobileNavToggle={handleMobileNavToggle} />
       <PortalMain toggleForm={toggleForm} />
+      {/* Comment Section */}
     </div>
   );
 };

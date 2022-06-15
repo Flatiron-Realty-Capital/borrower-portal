@@ -19,18 +19,18 @@ export const useHttpClient = () => {
           signal: httpAbortController.signal,
         });
 
-        const responseData = await response.json();
+        const dummyResponseData = await response.json();
 
         activeHttpRequests.current = activeHttpRequests.current.filter(
           (reqCtrl) => reqCtrl !== httpAbortController
         );
 
         if (!response.ok) {
-          throw new Error(responseData.message);
+          throw new Error(dummyResponseData.message);
         }
 
         setIsLoading(false);
-        return responseData;
+        return dummyResponseData;
       } catch (err) {
         setError(err.message);
         setIsLoading(false);

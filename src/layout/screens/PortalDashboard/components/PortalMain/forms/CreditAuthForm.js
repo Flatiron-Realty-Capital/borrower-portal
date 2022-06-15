@@ -12,6 +12,7 @@ import PhoneNumber from "../../../../UserAdmission/components/SignInForm/compone
 import FormField from "../../../../../../components/form/components/shared/FormField/FormField";
 import Signature from "../../../../../../components/form/components/inputs/generic/Signature/Signature";
 import { VALIDATOR_REQUIRE } from "../../../../../../helpers/validators/inputValidators";
+import { genericFieldNameTypes } from "../../../../../../global/formFieldNameTypes";
 // import Form from "../../../../UserAdmission/components/SignInForm/SignInForm";
 // import "./CreditAuthForm.css";
 
@@ -31,15 +32,37 @@ const CreditAuthForm = (props) => {
         <FirstNameField />
         <LastNameField />
       </Columns>
-      <TextField name="borrowerDob" label="Date of Birth" />
-      <TextField name="homeAddress" label="Home Address" />
-      <TextField name="borrowerPhoneNumber" label="Phone Number" />
+      <TextField name={genericFieldNameTypes.dob} label="Date of Birth" />
+      <TextField
+        name={genericFieldNameTypes.primaryAddressFull}
+        label="Home Address"
+      />
+      <TextField
+        name={genericFieldNameTypes.phoneNumber}
+        label="Phone Number"
+      />
       {/* <PhoneNumber /> */}
-      <EmailField name="borrowerEmail" label="Email Address" isRequired />
-      <TextField name="isUsCitizen" label="Borrower is a US Citizen" />
-      <TextField name="ssnNumber" label="Social Security Number" />
-      <FileUpload name="borrowerPhotoId" label="Please upload a photo ID" />
-      <Signature name="borrowerSignature" label="Borrower Signature" />
+      <EmailField
+        name={genericFieldNameTypes.emailAddress}
+        label="Email Address"
+        isRequired
+      />
+      <TextField
+        name={genericFieldNameTypes.isUsCitizen}
+        label="Borrower is a US Citizen"
+      />
+      <TextField
+        name={genericFieldNameTypes.ssnNumber}
+        label="Social Security Number"
+      />
+      <FileUpload
+        name={genericFieldNameTypes.photoId}
+        label="Please upload a photo ID"
+      />
+      <Signature
+        name={genericFieldNameTypes.signature}
+        label="Borrower Signature"
+      />
     </>
   );
 };

@@ -12,17 +12,11 @@ import CreditAuthRow from "./rows/CreditAuthRow";
 import AccountInformationSetup from "./AccountInformationSetup/AccountInformationSetup";
 
 const PortalMainBody = (props) => {
-  const [formIsActive, setFormIsActive] = React.useState(false);
+  const [AccountInformationIsSetup, setAccountInformationIsSetup] =
+    React.useState(false);
   const creditAuths = useSelector((state) => state.creditAuthorizations);
   const dealSubmissions = useSelector((state) => state.dealSubmissions);
-  const toggleForm = (title) => {
-    // setFormType(title);
-    setFormIsActive((s) => !s);
-  };
-  const viewCardDetailsHandler = (email) => {
-    props.toggleForm();
-    console.log("API REQUEST TO CREDIT AUTH COLLECTION ->", email);
-  };
+
   return (
     <section className="portal-body">
       {/* <div className="portal-body__header">
@@ -30,9 +24,17 @@ const PortalMainBody = (props) => {
         <p>What would you like to first?</p>
       </div> */}
       <div className="portal-body__content-area">
-        <AccountInformationSetup />
-        {/* <CreditAuthRow />
-        <DealSubmissionRow /> */}
+        {!AccountInformationIsSetup && (
+          <AccountInformationSetup
+            handleSubmit={() => setAccountInformationIsSetup(true)}
+          />
+        )}
+        {AccountInformationIsSetup && (
+          <>
+            <CreditAuthRow />
+            <DealSubmissionRow />
+          </>
+        )}
       </div>
     </section>
   );

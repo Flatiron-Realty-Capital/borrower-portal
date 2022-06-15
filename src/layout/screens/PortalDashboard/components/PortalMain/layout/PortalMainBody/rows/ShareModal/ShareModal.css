@@ -1,0 +1,54 @@
+#share-modal {
+  max-width: 540px;
+}
+
+#share-modal .url-preview-container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 25px;
+  font-size: 13px;
+}
+
+#share-modal .url-preview-container .preview-box {
+  font-size: inherit;
+  background-color: #ededed;
+  padding: 10px 16px;
+}
+
+#share-modal .url-preview-container button.copy-url {
+  padding: 12px;
+  font-size: inherit;
+  background-color: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#share-modal .url-preview-container button.copy-url span {
+  font-weight: bold;
+  font-size: inherit;
+  color: var(--blue);
+}
+
+#share-modal .url-preview-container button.copy-url .icon-wrapper {
+  margin-left: 5px;
+}
+
+#share-modal .url-preview-container button.copy-url .icon-wrapper svg {
+  fill: var(--blue);
+}
+/*# sourceMappingURL=ShareModal.css.map */

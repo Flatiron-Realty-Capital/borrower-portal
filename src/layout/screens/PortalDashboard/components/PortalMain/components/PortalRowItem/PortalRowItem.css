@@ -8,6 +8,7 @@
           flex-direction: column;
   margin: 25px 0 40px;
   display: flex;
+  width: 100;
 }
 
 #portal-row-item .row-item__title {
@@ -27,11 +28,8 @@
   opacity: 0.8;
 }
 
-#portal-row-item .row-item__title button.add-new {
-  width: 90px;
-  height: 28px;
-  background: var(--blue);
-  margin-left: 15px;
+#portal-row-item .row-item__title .button-container {
+  margin-left: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -43,19 +41,40 @@
           justify-content: space-evenly;
 }
 
-#portal-row-item .row-item__title button.add-new span {
+#portal-row-item .row-item__title .button-container button {
+  width: 28px;
+  height: 28px;
+  border-radius: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+#portal-row-item .row-item__title .button-container button span {
   color: #ffffff;
 }
 
-#portal-row-item .row-item__title button.add-new .icon-wrapper svg {
+#portal-row-item .row-item__title .button-container button .icon-wrapper svg {
   display: block;
-  fill: #ffffff;
+  fill: var(--darkGray);
 }
 
 #portal-row-item .row-item__body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  padding: 12px 0;
+}
+
+#portal-row-item .row-item__body .empty-container {
+  opacity: 0.85;
+  font-style: italic;
 }
 
 #portal-row-item .row-item__body .existing-item-row {
@@ -64,6 +83,7 @@
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  width: 100%;
 }
 
 #portal-row-item .row-item__body .existing-item-row .new-card-item {

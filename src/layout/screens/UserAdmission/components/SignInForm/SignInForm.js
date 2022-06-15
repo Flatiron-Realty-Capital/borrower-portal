@@ -42,11 +42,11 @@ const Form = () => {
     try {
       setIsLoading(true);
       // const response = await fetch(endpointURL, requestOptions);
-      // const responseData = await response.json();
+      // const dummyResponseData = await response.json();
       // // <SpinnerDotted size={150} thickness={100} speed={100} color="#235685" />;
 
       // if (!response.ok) {
-      //   throw new Error(responseData.message);
+      //   throw new Error(dummyResponseData.message);
       // }
       dispatch(logInUser());
       setIsLoading(false);

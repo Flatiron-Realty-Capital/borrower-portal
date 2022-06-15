@@ -1,92 +1,81 @@
 #account-information.modal {
-  background-color: #ffffff;
   max-width: 740px;
-  padding: 15px;
-  border-radius: 4px;
-  h2 {
-    font-size: 24px;
-    line-height: 32px;
-    margin-bottom: 5px;
-  }
-  h3 {
-    font-size: 16px;
-    line-height: 24px;
-    font-weight: bold;
-  }
-  p {
-    font-size: 14px;
-    line-height: 20px;
-  }
 
-  .form-progress-bar {
-    margin: 30px;
-    // border: 1px solid var(--gray);
-    // border: 1px solid #c1c0c0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 4px;
-    height: 60px;
-    .form-step {
-      position: relative;
-      bottom: 1px solid gray;
-      flex-grow: 1;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      border: 1px solid var(--gray);
-      justify-content: center;
-
-      border-right: none;
-      border-left: none;
-      &.active {
-        font-weight: bold;
-        color: var(--blue);
-        border-color: var(--blue);
-      }
-      // &:not(:last-child) {
-      //   &::after,
-      //   &::before {
-      //     content: "";
-      //     position: absolute;
-      //     width: 40px;
-      //     height: 1px;
-      //     background-color: var(--gray);
-
-      //     right: -25px;
-      //     display: block;
-
-      //     border-radius: 10px;
-      //     transform-origin: left;
-      //   }
-      //   &::after {
-      //     content: "";
-      //     top: 0px;
-      //     transform: rotate(45deg);
-      //   }
-      //   &::before {
-      //     content: "";
-      //     bottom: 0px;
-      //     transform: rotate(-45deg);
-      //   }
-      // }
+  .modal__header {
+    max-width: 610px;
+    margin: 0 auto;
+    .header-content-area {
+      padding: 15px;
     }
   }
-  .form-step-container {
-    padding: 10px 0;
-  }
 
-  .footer {
-    display: flex;
-    justify-content: space-between;
-    button {
-      padding: 10px 14px;
-      border: 1px solid;
-      border-color: var(--gray);
-      &#next {
-        color: #ffffff;
-        background-color: var(--blue);
-        border-color: var(--blue);
+  #main-content-area {
+    // padding: 10px 0;
+    max-width: 540px;
+    margin: 20px auto;
+    .modal__body {
+      padding: 10px 0;
+    }
+
+    .modal__footer {
+      margin-top: 15px;
+      display: flex;
+      justify-content: space-between;
+      button {
+        border: 1px solid;
+        border: none;
+        font-size: 13px;
+        width: min-content;
+        // border-color: var(--gray);
+        display: flex;
+        align-items: center;
+        span {
+          color: inherit;
+        }
+        .icon-wrapper {
+          display: block;
+          svg {
+            display: block;
+            fill: #ffffff;
+            height: 22px;
+          }
+        }
+
+        &#back {
+          color: var(--black);
+          padding: 8px 4px;
+          .icon-wrapper {
+            // margin-right: 4px;
+          }
+          svg {
+            fill: #7f7f7f;
+            // fill: var(--black);
+          }
+        }
+        &#next {
+          padding: 8px 14px;
+          color: #ffffff;
+
+          background-color: var(--blue);
+          // border-color: var(--blue);
+          .icon-wrapper {
+            margin-left: 4px;
+            margin-right: -8px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #account-information.modal {
+    .form-step {
+      .step-title {
+        text-align: center;
+        max-width: 80px;
+        font-size: 12px;
+        line-height: 17px;
       }
     }
   }

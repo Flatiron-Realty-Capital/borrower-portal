@@ -18,15 +18,17 @@ body,
   --mont: "Montserrat", sans-serif;
   --jost: "Jost", sans-serif;
   --script: "Meow Script", cursive;
-  --primary: #b92ede;
+  --primary: #235685;
+  --black: #3a3a3a;
+  --red: #cc0000;
+  --lightBlue: #f2f5f8;
   --blue: #235685;
   --blueHover: #285a88;
   --blueLightHover: #356899;
-  --black: #3a3a3a;
   --gray: #aaa9a9;
+  --borderGray: #c1c0c0;
   --darkGray: #777676;
   --lightGray: #e1e1e1;
-  --red: #cc0000;
 }
 
 button,

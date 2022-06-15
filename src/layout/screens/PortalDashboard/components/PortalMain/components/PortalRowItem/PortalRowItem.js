@@ -1,15 +1,26 @@
 import React from "react";
 import "./PortalRowItem.css";
+import { ReactComponent as Add } from "../../../../../../../assets/svgs/addToQueue.svg";
+import { ReactComponent as Share } from "../../../../../../../assets/svgs/shareFilled.svg";
+import ToolTip from "../../../../../../../components/shared/ToolTip/ToolTip";
 
 const PortalRowItem = (props) => {
   return (
     <div id="portal-row-item">
       <div className="row-item__title">
         <h2>{props.title}</h2>
-        <button onClick={props.addNewOnClick} className="add-new">
-          <span>Add New</span>
-          <div className="icon-wrapper">{plus}</div>
-        </button>
+        <div className="button-container">
+          <ToolTip text="New Credit Authorization">
+            <button onClick={props.addNewOnClick} className="add-new">
+              <div className="icon-wrapper">{<Add />}</div>
+            </button>
+          </ToolTip>
+          <ToolTip text="Share Form">
+            <button onClick={props.shareOnClick} className="add-new">
+              <div className="icon-wrapper">{<Share />}</div>
+            </button>
+          </ToolTip>
+        </div>
       </div>
       <div className="row-item__body">{props.children}</div>
     </div>
@@ -17,8 +28,3 @@ const PortalRowItem = (props) => {
 };
 
 export default PortalRowItem;
-const plus = (
-  <svg viewBox="0 0 24 24">
-    <path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6z"></path>
-  </svg>
-);

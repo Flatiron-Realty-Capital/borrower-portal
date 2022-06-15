@@ -71,7 +71,7 @@ function SignatureInput({ required, input, ...props }) {
         penColor="#235685"
         ref={sigRef}
         onEnd={trimHandler}
-        canvasProps={{ height: 110, className: "sigCanvas" }}
+        canvasProps={{ height: 150, className: "sigCanvas" }}
         {...props}
       />
     </>

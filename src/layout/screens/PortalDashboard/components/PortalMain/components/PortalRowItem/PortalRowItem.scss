@@ -3,7 +3,7 @@
   flex-direction: column;
   margin: 25px 0 40px;
   display: flex;
-
+  width: 100;
   .row-item__title {
     display: flex;
     align-items: center;
@@ -17,21 +17,29 @@
       font-weight: 600;
       opacity: 0.8;
     }
-    button.add-new {
-      width: 90px;
-      height: 28px;
-      background: var(--blue);
-      margin-left: 15px;
+    .button-container {
+      margin-left: 10px;
+
       display: flex;
       align-items: center;
       justify-content: space-evenly;
-      span {
-        color: #ffffff;
-      }
-      .icon-wrapper {
-        svg {
-          display: block;
-          fill: #ffffff;
+      button {
+        width: 28px;
+        height: 28px;
+        border-radius: 50px;
+        // background: var(--blue);
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        span {
+          color: #ffffff;
+        }
+        .icon-wrapper {
+          svg {
+            display: block;
+            fill: var(--darkGray);
+            // fill: var(--blue);
+          }
         }
       }
     }
@@ -39,9 +47,15 @@
 
   .row-item__body {
     display: flex;
+    padding: 12px 0;
+    .empty-container {
+      opacity: 0.85;
+      font-style: italic;
+    }
     .existing-item-row {
       display: flex;
       flex-wrap: wrap;
+      width: 100%;
       // margin-left: 20px;
       // padding-left: 20px;
       // border-left: 1px solid var(--lightGray);

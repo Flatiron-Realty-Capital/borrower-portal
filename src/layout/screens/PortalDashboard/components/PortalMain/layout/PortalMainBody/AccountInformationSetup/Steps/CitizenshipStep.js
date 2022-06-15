@@ -1,12 +1,31 @@
 import React from "react";
 import TextField from "../../../../../../../../../components/form/components/inputs/generic/TextField";
+import Columns from "../../../../../../../../../components/shared/Columns/Columns";
+import { genericFieldNameTypes } from "../../../../../../../../../global/formFieldNameTypes";
 
 const CitizenshipStep = (props) => {
   return (
     <>
-      <h3>Citizenship</h3>
-      <TextField name="isCitizen" label="Are you a US Citizen?" />
-      <TextField name="isCitizenDocType" label="Identification Document Type" />
+      <h3>Identity and Citizenship Verification</h3>
+      <TextField
+        name={genericFieldNameTypes.isUsCitizen}
+        label="Are you a US Citizen?"
+      />
+      <TextField
+        name={genericFieldNameTypes.idDocType}
+        label="Identification Document Type"
+      />
+      <Columns>
+        <TextField
+          name={genericFieldNameTypes.idDocExpiration}
+          label="Expiration Date"
+        />
+        <TextField
+          name={genericFieldNameTypes.idDocDateOfIssue}
+          label="Date of Issue"
+        />
+        <TextField name={genericFieldNameTypes.idNumber} label="ID Number" />
+      </Columns>
     </>
   );
 };

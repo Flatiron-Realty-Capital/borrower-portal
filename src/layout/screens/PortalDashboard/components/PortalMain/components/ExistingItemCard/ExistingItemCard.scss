@@ -1,11 +1,11 @@
 .new-card-item {
   position: relative;
   box-shadow: -2px 2px 2px 0px #00000014;
-  margin: 15px 0;
+  margin: 8px;
   padding: 18px 20px;
   width: 100%;
   // max-width: 380px;
-  width: 330px;
+  max-width: 330px;
   border-radius: 8px;
   border: 1px solid #ededed;
   h3 {

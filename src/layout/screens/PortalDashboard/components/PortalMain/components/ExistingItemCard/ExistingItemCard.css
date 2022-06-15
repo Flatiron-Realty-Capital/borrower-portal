@@ -2,10 +2,10 @@
   position: relative;
   -webkit-box-shadow: -2px 2px 2px 0px #00000014;
           box-shadow: -2px 2px 2px 0px #00000014;
-  margin: 15px 0;
+  margin: 8px;
   padding: 18px 20px;
   width: 100%;
-  width: 330px;
+  max-width: 330px;
   border-radius: 8px;
   border: 1px solid #ededed;
 }

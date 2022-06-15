@@ -6,6 +6,10 @@ import TextField from "../../../../../../components/form/components/inputs/gener
 import FirstNameField from "../../../../../../components/form/components/inputs/specifc/FirstNameField";
 import LastNameField from "../../../../../../components/form/components/inputs/specifc/LastNameField";
 import Columns from "../../../../../../components/shared/Columns/Columns";
+import {
+  borrowerFormFieldNameTypes,
+  genericFieldNameTypes,
+} from "../../../../../../global/formFieldNameTypes";
 
 // import "./LoginForm.css";
 
@@ -17,7 +21,11 @@ const NewBorrowerForm = (props) => {
         <LastNameField />
       </Columns>
 
-      <EmailField name="emailAddress" label="Email Address" isRequired />
+      <EmailField
+        name={genericFieldNameTypes.emailAddress}
+        label="Email Address"
+        isRequired
+      />
       <PhoneNumber />
 
       <TextField name="password" label="Password" />
