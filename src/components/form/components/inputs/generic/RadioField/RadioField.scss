@@ -7,6 +7,7 @@
   .MuiRadio-root {
     padding: 0 !important;
     margin-left: 10px;
+    // color: #666666 !important;
   }
   .MuiTypography-root {
     font-size: 0.8rem !important;
@@ -18,6 +19,9 @@
   }
 }
 
-span.MuiRadio-root.Mui-checked {
+.MuiRadio-root.Mui-checked {
   color: #235685 !important;
+}
+.MuiTouchRipple-root {
+  // color: #666666 !important;
 }

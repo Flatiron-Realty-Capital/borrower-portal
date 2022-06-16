@@ -18,7 +18,7 @@
   color: #666666;
 }
 
-span.MuiRadio-root.Mui-checked {
+.MuiRadio-root.Mui-checked {
   color: #235685 !important;
 }
 /*# sourceMappingURL=RadioField.css.map */

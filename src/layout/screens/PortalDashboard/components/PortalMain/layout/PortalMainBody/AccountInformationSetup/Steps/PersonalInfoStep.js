@@ -1,6 +1,7 @@
 import React from "react";
 import EmailField from "../../../../../../../../../components/form/components/inputs/generic/EmailField";
 import RadioField from "../../../../../../../../../components/form/components/inputs/generic/RadioField/RadioField";
+import SelectField from "../../../../../../../../../components/form/components/inputs/generic/SelectField/SelectField";
 import TextField from "../../../../../../../../../components/form/components/inputs/generic/TextField";
 import FirstNameField from "../../../../../../../../../components/form/components/inputs/specifc/FirstNameField";
 import LastNameField from "../../../../../../../../../components/form/components/inputs/specifc/LastNameField";
@@ -14,10 +15,27 @@ const PersonalInfoStep = (props) => {
       <LastNameField />
       <RadioField
         name={genericFieldNameTypes.isUsCitizen}
-        options={["Yes", "No"]}
+        items={["Yes", "No"]}
         label="Are you a US Citizen?"
       />
       <TextField name={genericFieldNameTypes.dob} label="Date of Birth" />
+      {/* <SelectField
+        name="months"
+        items={[
+          "January",
+          "February",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
+          "August",
+          "September",
+          "October",
+          "November",
+          "December",
+        ]}
+      /> */}
       <TextField
         name={genericFieldNameTypes.primaryAddressFull}
         label="Home Address"

@@ -1,4 +1,4 @@
-const isLoggedIn = (state = false, action) => {
+const isLoggedIn = (state = true, action) => {
   switch (action.type) {
     case "SET_IS_LOGGED_IN":
       return action.payload;
