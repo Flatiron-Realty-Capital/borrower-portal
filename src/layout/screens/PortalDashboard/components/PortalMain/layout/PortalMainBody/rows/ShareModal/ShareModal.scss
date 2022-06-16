@@ -1,35 +1,99 @@
 #share-modal {
   // position: relative;
   max-width: 540px;
-  .url-preview-container {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 25px;
-    font-size: 13px;
-    .preview-box {
-      font-size: inherit;
-      background-color: #ededed;
-      padding: 10px 16px;
+  .modal__header {
+    text-align: left;
+    h2 {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
     }
-    button.copy-url {
-      padding: 12px;
-      font-size: inherit;
-      background-color: none;
-
+  }
+  .modal__body {
+    margin-top: 30px;
+    border-top: 1px solid var(--lightGray);
+    padding-top: 20px;
+    .preview-title {
+      font-weight: bold;
+      font-size: 13px;
+      text-align: left;
+    }
+    .url-preview-container {
+      position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
-      span {
-        font-weight: bold;
+
+      font-size: 13px;
+      .preview-box {
         font-size: inherit;
-        color: var(--blue);
+        background-color: #f2f2f2;
+        padding: 10px 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        // flex-grow: 1;
+        .url-wrapper {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          display: block;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          .url {
+            display: block;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+          }
+        }
+        span {
+          display: block;
+        }
       }
       .icon-wrapper {
-        margin-left: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
         svg {
-          fill: var(--blue);
+          width: 20px;
+          fill: var(--black);
+        }
+
+        &#link {
+          margin-right: 5px;
+        }
+        &#copy {
+          margin-left: 5px;
+        }
+      }
+      button.copy-url {
+        padding: 12px;
+        font-size: inherit;
+        background-color: var(--blue);
+        margin-left: 10px;
+        font-size: 0.8rem;
+        // width: 100px;
+        display: flex;
+        align-items: center;
+        color: #ffffff;
+        // color: var(--blue);
+        justify-content: center;
+        flex-shrink: 0;
+        svg {
+          fill: #ffffff;
+        }
+        span {
+          font-weight: 500;
+          font-size: inherit;
+          display: block;
+          color: inherit;
+        }
+        &.is-copied {
+          background-color: #188351;
+          color: #ffffff;
         }
       }
     }

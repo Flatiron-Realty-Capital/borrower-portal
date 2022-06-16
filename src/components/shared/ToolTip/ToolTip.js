@@ -10,9 +10,7 @@ const ToolTip = (props) => {
       id=""
       className="tool-tip-wrapper"
     >
-      <div style={{ opacity: isActive ? 1 : 0 }} className="tool-tip">
-        {props.text}
-      </div>
+      {isActive && <div className="tool-tip">{props.text}</div>}
       {props.children}
     </div>
   );

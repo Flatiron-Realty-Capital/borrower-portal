@@ -15,7 +15,7 @@ const PortalRowItem = (props) => {
               <div className="icon-wrapper">{<Add />}</div>
             </button>
           </ToolTip>
-          <ToolTip text="Share Form">
+          <ToolTip text="Share Credit Authorization Form">
             <button onClick={props.shareOnClick} className="add-new">
               <div className="icon-wrapper">{<Share />}</div>
             </button>

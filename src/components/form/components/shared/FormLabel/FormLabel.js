@@ -4,10 +4,9 @@ import "./FormLabel.css";
 
 const FormLabel = (props) => {
   return (
-    <div id="" className="form-label">
+    <div id={props.id} className={`form-label ${props.className}`}>
       <InputLabel sx={{ fontSize: ".8rem", fontWeight: 600, opacity: ".8" }}>
-        {" "}
-        {props.text}{" "}
+        {props.text}
       </InputLabel>
     </div>
   );

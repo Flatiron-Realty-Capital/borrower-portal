@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import ArrowFormProgressBar from "../../../../../../../../components/form/ArrowFormProgressBar/ArrowFormProgressBar";
+import ArrowFormProgressBar from "../../../../../../../../components/form/components/ArrowFormProgressBar/ArrowFormProgressBar";
 import { ReactComponent as RightArrow } from "../../../../../../../../assets/svgs/rightArrow.svg";
 import { ReactComponent as LeftArrow } from "../../../../../../../../assets/svgs/leftArrow.svg";
 import Form from "../../../../../../../../components/form/Form";
@@ -54,12 +54,17 @@ const AccountInformationSetup = (props) => {
 
   const formSteps = [
     "Personal Information",
-    "Citizenship",
+    "Identity & Citizenship",
     "Borrower Background ",
   ];
 
   return (
-    <Modal id="account-information" onCancel={props.onCancel} show={true}>
+    <Modal
+      hideCloseButton
+      id="account-information"
+      onCancel={props.onCancel}
+      show={true}
+    >
       <Form
         id={props.formType === "credit" ? "creditAuth" : "newDealSubmission"}
         initialValues={props.initialValues}

@@ -1,0 +1,24 @@
+#radio-field {
+  position: relative;
+  text-align: left;
+}
+
+#radio-field .MuiFormControlLabel-root {
+  margin-top: 5px;
+}
+
+#radio-field .MuiRadio-root {
+  padding: 0 !important;
+  margin-left: 10px;
+}
+
+#radio-field .MuiTypography-root {
+  font-size: 0.8rem !important;
+  margin-left: 5px;
+  color: #666666;
+}
+
+span.MuiRadio-root.Mui-checked {
+  color: #235685 !important;
+}
+/*# sourceMappingURL=RadioField.css.map */

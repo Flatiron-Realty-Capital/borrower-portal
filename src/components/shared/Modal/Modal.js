@@ -7,15 +7,25 @@ import Backdrop from "../Backdrop/Backdrop";
 import "./Modal.css";
 
 const ModalOverlay = (props) => {
-  const { id, className, style, onCancel, contentClass, footer, footerClass } =
-    props;
+  const {
+    id,
+    hideCloseButton,
+    className,
+    style,
+    onCancel,
+    contentClass,
+    footer,
+    footerClass,
+  } = props;
 
   const content = (
     <div id={props.id} className={`modal ${className}`} style={style}>
       <div className="modal__header">
-        <button onClick={onCancel} className="cancel">
-          {timesIcon}
-        </button>
+        {!hideCloseButton && (
+          <button onClick={onCancel} className="cancel">
+            {timesIcon}
+          </button>
+        )}
       </div>
 
       <div className={`modal__content ${contentClass}`}>{props.children}</div>

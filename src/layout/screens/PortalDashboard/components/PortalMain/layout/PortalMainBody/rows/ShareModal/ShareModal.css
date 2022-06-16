@@ -2,7 +2,28 @@
   max-width: 540px;
 }
 
-#share-modal .url-preview-container {
+#share-modal .modal__header {
+  text-align: left;
+}
+
+#share-modal .modal__header h2 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+#share-modal .modal__body {
+  margin-top: 30px;
+  border-top: 1px solid var(--lightGray);
+  padding-top: 20px;
+}
+
+#share-modal .modal__body .preview-title {
+  font-weight: bold;
+  font-size: 13px;
+  text-align: left;
+}
+
+#share-modal .modal__body .url-preview-container {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -13,20 +34,53 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-top: 25px;
   font-size: 13px;
 }
 
-#share-modal .url-preview-container .preview-box {
+#share-modal .modal__body .url-preview-container .preview-box {
   font-size: inherit;
-  background-color: #ededed;
-  padding: 10px 16px;
+  background-color: #f2f2f2;
+  padding: 10px 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
 }
 
-#share-modal .url-preview-container button.copy-url {
-  padding: 12px;
-  font-size: inherit;
-  background-color: none;
+#share-modal .modal__body .url-preview-container .preview-box .url-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+#share-modal .modal__body .url-preview-container .preview-box .url-wrapper .url {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+#share-modal .modal__body .url-preview-container .preview-box span {
+  display: block;
+}
+
+#share-modal .modal__body .url-preview-container .icon-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -38,17 +92,52 @@
           justify-content: center;
 }
 
-#share-modal .url-preview-container button.copy-url span {
-  font-weight: bold;
-  font-size: inherit;
-  color: var(--blue);
+#share-modal .modal__body .url-preview-container .icon-wrapper svg {
+  width: 20px;
+  fill: var(--black);
 }
 
-#share-modal .url-preview-container button.copy-url .icon-wrapper {
+#share-modal .modal__body .url-preview-container .icon-wrapper#link {
+  margin-right: 5px;
+}
+
+#share-modal .modal__body .url-preview-container .icon-wrapper#copy {
   margin-left: 5px;
 }
 
-#share-modal .url-preview-container button.copy-url .icon-wrapper svg {
-  fill: var(--blue);
+#share-modal .modal__body .url-preview-container button.copy-url {
+  padding: 12px;
+  font-size: inherit;
+  background-color: var(--blue);
+  margin-left: 10px;
+  font-size: 0.8rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #ffffff;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+#share-modal .modal__body .url-preview-container button.copy-url svg {
+  fill: #ffffff;
+}
+
+#share-modal .modal__body .url-preview-container button.copy-url span {
+  font-weight: 500;
+  font-size: inherit;
+  display: block;
+  color: inherit;
+}
+
+#share-modal .modal__body .url-preview-container button.copy-url.is-copied {
+  background-color: #188351;
+  color: #ffffff;
 }
 /*# sourceMappingURL=ShareModal.css.map */
