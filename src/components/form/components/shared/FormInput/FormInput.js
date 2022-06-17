@@ -69,7 +69,7 @@ const FormInput = (props) => {
       <Field
         initialValue={props.value || ""}
         name={props.name}
-        validate={props.validate}
+        validate={props.validators}
       >
         {({ input, meta }) => (
           <FormControl fullWidth variant="outlined">
