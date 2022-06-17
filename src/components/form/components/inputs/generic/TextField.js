@@ -8,7 +8,7 @@ const TextField = (props) => {
 
   return (
     <FormInput
-      validators={props.validate}
+      validate={props.validate}
       name={props.name}
       label={props.label}
       noMargin={props.noMargin}

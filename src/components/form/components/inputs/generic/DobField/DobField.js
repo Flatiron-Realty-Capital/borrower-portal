@@ -1,6 +1,9 @@
 import { MenuItem, Select } from "@mui/material";
 import React from "react";
-import { Field } from "react-final-form";
+import { useState } from "react";
+import { Field, useFormState } from "react-final-form";
+import { genericFieldNameTypes } from "../../../../../../global/formFieldNameTypes";
+import { VALIDATOR_REQUIRE } from "../../../../../../helpers/validators/inputValidators";
 import Columns from "../../../../../shared/Columns/Columns";
 import FormField from "../../../shared/FormField/FormField";
 import FormLabel from "../../../shared/FormLabel/FormLabel";
@@ -10,6 +13,8 @@ import DaySelect from "./DaySelect";
 // import "./DobField.css";
 
 const DobField = (props) => {
+  const [selectedMonth, setSelectedMonth] = useState("");
+
   let months = [
     "January",
     "February",
@@ -39,33 +44,40 @@ const DobField = (props) => {
     November: 30,
     December: 31,
   };
-
+  const { values } = useFormState();
   return (
     <FormField id="radio-field">
       <FormLabel label={"Date of Birth"} />
 
       <Columns>
         <SelectField
-          name="months"
-          label="Months"
+          validate={VALIDATOR_REQUIRE}
+          name={genericFieldNameTypes.dobMonth}
           noMargin
-          items={[
-            "January",
-            "February",
-            "March",
-            "April",
-            "May",
-            "June",
-            "July",
-            "August",
-            "September",
-            "October",
-            "November",
-            "December",
-          ]}
+          items={months}
+          defaultValue="Select Month"
         />
-        <DaySelect />
-        <TextField noMargin name="yearBorn" label="Year" />
+        <SelectField
+          validate={VALIDATOR_REQUIRE}
+          defaultValue="Select Day"
+          name={genericFieldNameTypes.dobDay}
+          noMargin
+        >
+          {[
+            ...Array(
+              daysInMonths[values[genericFieldNameTypes.dobMonth] || "January"]
+            ),
+          ].map((item, i) => (
+            <option value={item}>{i}</option>
+          ))}
+        </SelectField>
+
+        <TextField
+          validate={VALIDATOR_REQUIRE}
+          noMargin
+          name="yearBorn"
+          label="Year"
+        />
       </Columns>
     </FormField>
   );

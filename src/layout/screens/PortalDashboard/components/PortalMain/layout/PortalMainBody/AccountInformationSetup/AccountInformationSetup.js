@@ -14,6 +14,7 @@ import { setAccountInfoState } from "../../../../../../../../redux/actions/accou
 import FormSubmitButton from "../../../../../../../../components/form/components/shared/FormSubmitButton/FormSubmitButton";
 import { genericFieldNameTypes } from "../../../../../../../../global/formFieldNameTypes";
 import SelectField from "../../../../../../../../components/form/components/inputs/generic/SelectField/SelectField";
+import { endPointDestinations } from "../../../../../../../../global/endPointDestinations";
 
 const AccountInformationSetup = (props) => {
   const [formActive, setFormActive] = React.useState(false);
@@ -27,18 +28,32 @@ const AccountInformationSetup = (props) => {
 
   //Functions
 
-  const handleSubmit = (state) => {
+  const handleSubmit = async (state) => {
     console.log("SUBMITTING", state);
     const timeElapsed = Date.now();
     const today = new Date(timeElapsed);
     let date = today.toDateString();
     const addtionalInfo = {
-      id: Math.random(),
+      // id: Math.random(),
       submissionDate: date,
     };
     let updatedState = { ...state, ...addtionalInfo };
     dispatch(setAccountInfoState(updatedState));
-    props.handleSubmit();
+    props.toggleAccountInfoIsSetup();
+    try {
+      console.log("Send Data to endpoint ->", state);
+      const responseData = await sendRequest(endPointDestinations.FORM, state);
+      console.log("responseData", responseData);
+      // <SpinnerDotted size={150} thickness={100} speed={100} color="#235685" />;
+
+      if (responseData.Error) {
+        console.log("Failed Login", responseData);
+        // setRequestFailed(true);
+        throw new Error(responseData);
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const nextStepHandler = (state) => {

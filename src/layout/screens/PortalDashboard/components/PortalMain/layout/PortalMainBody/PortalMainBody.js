@@ -26,7 +26,7 @@ const PortalMainBody = (props) => {
       <div className="portal-body__content-area">
         {!AccountInformationIsSetup && (
           <AccountInformationSetup
-            handleSubmit={() => setAccountInformationIsSetup(true)}
+            toggleAccountInfoIsSetup={() => setAccountInformationIsSetup(true)}
           />
         )}
         {AccountInformationIsSetup && (

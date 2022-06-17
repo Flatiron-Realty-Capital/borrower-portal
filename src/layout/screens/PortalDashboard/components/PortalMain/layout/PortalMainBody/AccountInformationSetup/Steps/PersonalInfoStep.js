@@ -6,39 +6,19 @@ import SelectField from "../../../../../../../../../components/form/components/i
 import TextField from "../../../../../../../../../components/form/components/inputs/generic/TextField";
 import FirstNameField from "../../../../../../../../../components/form/components/inputs/specifc/FirstNameField";
 import LastNameField from "../../../../../../../../../components/form/components/inputs/specifc/LastNameField";
+import Columns from "../../../../../../../../../components/shared/Columns/Columns";
 import { genericFieldNameTypes } from "../../../../../../../../../global/formFieldNameTypes";
 
 const PersonalInfoStep = (props) => {
   return (
     <>
       <h3>Personal Contact Details</h3>
-      <FirstNameField />
-      <LastNameField />
-      <RadioField
-        name={genericFieldNameTypes.isUsCitizen}
-        items={["Yes", "No"]}
-        label="Are you a US Citizen?"
-      />
-      {/* <TextField name={genericFieldNameTypes.dob} label="Date of Birth" /> */}
-      {/* <SelectField
-        name="months"
-        items={[
-          "January",
-          "February",
-          "March",
-          "April",
-          "May",
-          "June",
-          "July",
-          "August",
-          "September",
-          "October",
-          "November",
-          "December",
-        ]}
-      /> */}
+      <Columns>
+        <FirstNameField />
+        <LastNameField />
+      </Columns>
 
-      <DobField />
+      {/* <DobField /> */}
       <TextField
         name={genericFieldNameTypes.primaryAddressFull}
         label="Home Address"

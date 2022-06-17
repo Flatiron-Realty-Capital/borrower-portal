@@ -46,6 +46,15 @@
   animation-duration: 10ms;
   padding-top: 1px;
   padding: 8.5px 14px;
+  -moz-appearance: none;
+  /* Firefox */
+  -webkit-appearance: none;
+  /* Safari and Chrome */
+  appearance: none;
+}
+
+#select-field .select-wrapper select option {
+  color: rgba(0, 0, 0, 0.6);
 }
 
 #select-field .select-wrapper fieldset {
@@ -64,5 +73,20 @@
   overflow: hidden;
   min-width: 0%;
   border-color: rgba(0, 0, 0, 0.23);
+}
+
+#select-field .arrow-wrapper {
+  position: absolute;
+  right: 14px;
+}
+
+#select-field .arrow-wrapper.active {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+#select-field .arrow-wrapper svg {
+  fill: rgba(0, 0, 0, 0.3);
+  height: 10px;
 }
 /*# sourceMappingURL=SelectField.css.map */

@@ -9,20 +9,17 @@ import {
 import FormInput from "../../shared/FormInput/FormInput";
 // import "./Email.css";
 
-const composeValidators =
-  (...validators) =>
+const composevalidate =
+  (...validate) =>
   (value) =>
-    validators.reduce(
-      (error, validator) => error || validator(value),
-      undefined
-    );
+    validate.reduce((error, validator) => error || validator(value), undefined);
 
 const EmailField = (props) => {
   const { values } = useFormState();
 
   return (
     <FormInput
-      validate={composeValidators(VALIDATOR_REQUIRE, VALIDATOR_EMAIL)}
+      validate={composevalidate(VALIDATOR_REQUIRE, VALIDATOR_EMAIL)}
       name={props.name}
       label={"First Name"}
       icon={<EmailOutlined />}

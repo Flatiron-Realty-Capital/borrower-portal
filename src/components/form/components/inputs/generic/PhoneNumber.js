@@ -35,7 +35,7 @@ const PhoneNumber = (props) => {
   // };
   return (
     <FormInput
-      validators={[VALIDATOR_REQUIRE]}
+      validate={[VALIDATOR_REQUIRE]}
       name={props.name ? props.name : genericFieldNameTypes.phoneNumber}
       label={props.label ? props.label : "Phone Number"}
       keyName={"phoneNumber"}

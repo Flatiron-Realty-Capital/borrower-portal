@@ -25,8 +25,12 @@ export const usePostRequest = () => {
       const requestOptions = {
         method: "POST",
         body: JSON.stringify(requestData),
-        headers: { "Content-Type": "application/json", token: token },
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: token,
+        },
       };
+      console.log("requestOptions", requestOptions);
       try {
         const response = await fetch(
           `${backendEndpoint}/${formTypeDestination}`,
