@@ -17,7 +17,7 @@ const RadioField = (props) => {
   const { values } = useFormState();
   return (
     <FormField id="radio-field">
-      <FormLabel text={props.label} />
+      <FormLabel label={props.label} />
       {props.items.map((o) => (
         <Field name={props.name} component="input" type="radio" value={o}>
           {({ input, meta }) => (

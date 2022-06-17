@@ -16,7 +16,7 @@ import { OutlinedInput } from "@mui/material";
 const FileUpload = (props) => {
   return (
     <FormField id="file-upload">
-      <FormLabel text={props.label} />
+      <FormLabel label={props.label} />
       <Field name={props.name} {...props} component={FileFieldInput} />
       <Field
         name={props.name}

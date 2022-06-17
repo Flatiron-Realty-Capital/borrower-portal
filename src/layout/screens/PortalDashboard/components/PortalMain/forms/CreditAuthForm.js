@@ -19,7 +19,7 @@ import { genericFieldNameTypes } from "../../../../../../global/formFieldNameTyp
 const CreditAuthForm = (props) => {
   const sig = (
     <FormField>
-      <FormLabel text="Signature" />
+      <FormLabel label="Signature" />
       <SignatureCanvas
         penColor="green"
         canvasProps={{ width: 500, height: 200, className: "sigCanvas" }}

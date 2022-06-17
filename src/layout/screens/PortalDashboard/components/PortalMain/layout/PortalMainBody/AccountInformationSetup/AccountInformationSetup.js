@@ -13,6 +13,7 @@ import PersonalInfoStep from "./Steps/PersonalInfoStep";
 import { setAccountInfoState } from "../../../../../../../../redux/actions/accountInfoActions";
 import FormSubmitButton from "../../../../../../../../components/form/components/shared/FormSubmitButton/FormSubmitButton";
 import { genericFieldNameTypes } from "../../../../../../../../global/formFieldNameTypes";
+import SelectField from "../../../../../../../../components/form/components/inputs/generic/SelectField/SelectField";
 
 const AccountInformationSetup = (props) => {
   const [formActive, setFormActive] = React.useState(false);

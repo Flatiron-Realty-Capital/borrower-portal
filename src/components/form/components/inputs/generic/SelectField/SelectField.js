@@ -1,9 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { MenuItem, Select } from "@mui/material";
-import { Field, useFormState } from "react-final-form";
+import { MenuItem } from "@mui/material";
+// import { Field, useFormState } from "react-final-form";
 import FormField from "../../../shared/FormField/FormField";
+// import { Select } from "final-form-material-ui";
+import { Field } from "react-final-form";
+import { Select } from "final-form-material-ui";
+// import MenuItem from "@material-ui/core/MenuItem";
+
 import FormLabel from "../../../shared/FormLabel/FormLabel";
-// import "./SelectField.css";
+import SelectInput from "@material-ui/core/Select/SelectInput";
+// import { Menu } from "@material-ui/core";
+import "./SelectField.css";
+// SelectInput
 
 const SelectField = (props) => {
   const [value, setValue] = useState("");
@@ -48,8 +56,17 @@ const SelectField = (props) => {
   // const { values } = useFormState();
 
   return (
-    <FormField id="select-field">
-      <FormLabel text={props.label} />s
+    <FormField noMargin={props.noMargin} id="select-field">
+      {/* <FormLabel className="select-label" label={props.label} /> */}
+      <div className="select-wrapper">
+        <Field c name="favoriteColor" type="select" component="select">
+          {props.items.map((item) => (
+            <option value={item}>{item}</option>
+            // <MenuItem value={item}>{item}</MenuItem>
+          ))}
+        </Field>
+        <fieldset></fieldset>
+      </div>
       {/* <Select
         id="month"
         className="custom-select month"
@@ -77,16 +94,20 @@ const SelectField = (props) => {
         <MenuItem value={"monthg"}>"mongth"</MenuItem>
         <MenuItem value={"monthc"}>"mhonth"</MenuItem>
       </Select> */}
-      {/*       
-      <Field name={props.name} component="select" value={values[props.name]}>
-        {({ input, meta }) => (
+      {/* <Field name={props.name} component={Select} multiple>
+        {months.map((month) => (
+          <span>sd</span>
+          // <MenuItem value={month}>{month}</MenuItem>
+        ))}
+      </Field> */}
+      {/* <Field name={props.name} component="select" value={"values[props.name]"}>
+        {(props) => (
           <Select
             id="month"
             className="custom-select month"
-            {...input}
             fullWidth
             size="small"
-            value={values[props.name]}
+            value={"values[props.name]"}
             // onChange={handleChange}
           >
             <MenuItem value={"month"}>{"month"}</MenuItem>
@@ -95,32 +116,7 @@ const SelectField = (props) => {
           </Select>
         )}
       </Field> */}
-      {/* <Field name="favoriteColor" component="select">
-        <option />
-        <option value="#ff0000">❤️ Red</option>
-        <option value="#00ff00">💚 Green</option>
-        <option value="#0000ff">💙 Blue</option>
-      </Field> */}
-      <Field name="favoriteColor" component={selectComponent} />
     </FormField>
-  );
-};
-
-const selectComponent = () => {
-  return (
-    <Select
-      id="month"
-      className="custom-select month"
-      // {...input}
-      fullWidth
-      size="small"
-
-      // value={values[props.name]}
-    >
-      <MenuItem value={"month"}>{"month"}</MenuItem>
-      <MenuItem value={"month"}>{"month"}</MenuItem>
-      <MenuItem value={"month"}>{"month"}</MenuItem>
-    </Select>
   );
 };
 

@@ -29,6 +29,7 @@ const FormInput = (props) => {
     ariaLabel,
     iconOnClick,
     showError,
+    noMargin,
     icon,
     label,
     onKeyDown,
@@ -64,7 +65,7 @@ const FormInput = (props) => {
   );
   // const required = (value) => (value ? undefined : "Required");
   return (
-    <FormField>
+    <FormField noMargin={noMargin}>
       <Field
         initialValue={props.value || ""}
         name={props.name}

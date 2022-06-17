@@ -1,4 +1,5 @@
 import React from "react";
+import DobField from "../../../../../../../../../components/form/components/inputs/generic/DobField/DobField";
 import EmailField from "../../../../../../../../../components/form/components/inputs/generic/EmailField";
 import RadioField from "../../../../../../../../../components/form/components/inputs/generic/RadioField/RadioField";
 import SelectField from "../../../../../../../../../components/form/components/inputs/generic/SelectField/SelectField";
@@ -18,7 +19,7 @@ const PersonalInfoStep = (props) => {
         items={["Yes", "No"]}
         label="Are you a US Citizen?"
       />
-      <TextField name={genericFieldNameTypes.dob} label="Date of Birth" />
+      {/* <TextField name={genericFieldNameTypes.dob} label="Date of Birth" /> */}
       {/* <SelectField
         name="months"
         items={[
@@ -36,6 +37,8 @@ const PersonalInfoStep = (props) => {
           "December",
         ]}
       /> */}
+
+      <DobField />
       <TextField
         name={genericFieldNameTypes.primaryAddressFull}
         label="Home Address"

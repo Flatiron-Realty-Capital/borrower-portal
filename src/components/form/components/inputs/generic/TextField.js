@@ -11,6 +11,7 @@ const TextField = (props) => {
       validators={props.validate}
       name={props.name}
       label={props.label}
+      noMargin={props.noMargin}
       keyName={"firstName"}
       value={values[props.name]}
       ariaLabel={"email address"}

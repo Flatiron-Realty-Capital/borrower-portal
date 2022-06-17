@@ -6,7 +6,7 @@ const FormLabel = (props) => {
   return (
     <div id={props.id} className={`form-label ${props.className}`}>
       <InputLabel sx={{ fontSize: ".8rem", fontWeight: 600, opacity: ".8" }}>
-        {props.text}
+        {props.label}
       </InputLabel>
     </div>
   );

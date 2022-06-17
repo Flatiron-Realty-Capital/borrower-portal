@@ -40,7 +40,7 @@ const Signature = (props) => {
               isRequired
               {...input}
             />
-            <FormLabel text={props.label} />
+            <FormLabel label={props.label} />
             <SignatureCanvas
               penColor="#235685"
               ref={sigRef}
@@ -66,7 +66,7 @@ function SignatureInput({ required, input, ...props }) {
   };
   return (
     <>
-      <FormLabel text={props.label} />
+      <FormLabel label={props.label} />
       <SignatureCanvas
         penColor="#235685"
         ref={sigRef}

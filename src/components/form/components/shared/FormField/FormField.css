@@ -1,6 +1,11 @@
 .form-field {
   width: 100%;
   margin-top: 18px;
+  text-align: left;
+}
+
+.form-field label {
+  font-family: var(--inter);
 }
 
 .form-field .MuiFormLabel-root-MuiInputLabel-root {
